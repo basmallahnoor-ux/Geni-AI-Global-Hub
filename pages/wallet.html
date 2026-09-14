@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet, Rewards & Store - Geni AI Global Hub</title>
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #141414;
+            --gold-primary: #ffd700;
+            --gold-light: #ffea75;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #332d00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Top Website Global Navigation Bar */
+        .site-nav {
+            background-color: #000000;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .site-logo {
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold-primary);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: var(--text-muted);
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--gold-primary);
+            color: #000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        header {
+            background: linear-gradient(135deg, #111111, #000000);
+            border-bottom: 2px solid var(--gold-primary);
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        header h1 {
+            color: var(--gold-primary);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .feature-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .feature-block img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            object-fit: contain;
+            background-color: #000;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .feature-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .feature-info h2 {
+            color: var(--gold-light);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 215, 0, 0.1);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .note-box {
+            background-color: #111;
+            border-left: 4px solid var(--gold-primary);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #040404;
+            color: var(--text-muted);
+            border-top: 1px solid #1a1a1a;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Website Global Navigation -->
+    <nav class="site-nav">
+        <a href="../index.html" class="site-logo">⚡ GENI AI HUB</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="wallet.html" class="active">Wallet & Store</a></li>
+            <li class="dropdown">
+                <a href="account-safety.html">Account & Safety ▾</a>
+                <div class="dropdown-content">
+                    <a href="account-safety.html">Account Overview</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="delete-account.html">Delete Account</a>
+                </div>
+            </li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Wallet, Rewards & Store</h1>
+        <p>Manage your dual-currency balances, earn daily credits, and explore store options.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Wallet 1 -->
+        <div class="feature-block">
+            <img src="../images/wallet-rewards-menu.jpg" alt="Wallet and Rewards Menu">
+            <div class="feature-info">
+                <span class="tag">Financial Hub</span>
+                <h2>Wallet & Rewards Menu</h2>
+                <p>The central financial dashboard where users can monitor their real-time dual-currency coin balances, track rewards, and access earning shortcuts seamlessly.</p>
+                <div class="note-box">
+                    💡 Keeps full transparent records of your earned and spent generation points.
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallet 2 -->
+        <div class="feature-block">
+            <img src="../images/watch-ad-reward.jpg" alt="Watch Ad Reward">
+            <div class="feature-info">
+                <span class="tag">Free Earning</span>
+                <h2>Ad-Rewarded Credit System</h2>
+                <p>Users can earn free generation credits instantly by watching rewarded video advertisements directly inside the application, ensuring accessibility for active users without mandatory payments.</p>
+            </div>
+        </div>
+
+        <!-- Wallet 3 -->
+        <div class="feature-block">
+            <img src="../images/store.jpg" alt="Credit Store Main">
+            <div class="feature-info">
+                <span class="tag">Store & Packages</span>
+                <h2>Credit Store (Primary Packages)</h2>
+                <p>An integrated store module offering flexible gold and silver coin credit packages tailored for power users who want uninterrupted high-volume AI processing capabilities.</p>
+            </div>
+        </div>
+
+        <!-- Wallet 4 -->
+        <div class="feature-block">
+            <img src="../images/store%201.jpg" alt="Credit Store Alternative">
+            <div class="feature-info">
+                <span class="tag">Store Options</span>
+                <h2>Credit Store (Detailed Catalog)</h2>
+                <p>Comprehensive listing showcasing promotional coin bundles, seasonal discounts, and special value tiers to choose from.</p>
+                <div class="note-box">
+                    🔒 All in-app transactions and credit purchases are processed securely.
+                </div>
+            </div>
+        </div>
+
+        <!-- Wallet 5 -->
+        <div class="feature-block">
+            <img src="../images/invite.jpg" alt="Referral Invite System">
+            <div class="feature-info">
+                <span class="tag">Community Rewards</span>
+                <h2>Referral Invite System</h2>
+                <p>Invite friends and community members to join Geni AI Global Hub via custom referral links and QR codes to earn bonus credits together.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="wallet.html">Wallet & Store</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="delete-account.html">Delete Account</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
