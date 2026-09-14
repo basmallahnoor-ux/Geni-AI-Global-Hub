@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Geni AI Global Hub - Official Gallery</title>
-
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geni AI Global Hub - Official</title><style>
     :root {
-        --bg-color: #080808;
-        --card-bg: #141414;
-        --gold-primary: #ffd700;
+        --bg: #080808;
+        --card: #141414;
+        --card2: #1b1b1b;
+        --gold: #ffd700;
         --gold-light: #ffea75;
-        --text-main: #ffffff;
-        --text-muted: #a0a0a0;
-        --border-color: #332d00;
+        --text: #f5f5f5;
+        --muted: #a9a9a9;
+        --border: rgba(255, 215, 0, 0.18);
     }
 
     * {
@@ -25,629 +25,680 @@
     }
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-main);
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
         line-height: 1.6;
     }
 
-    /* Global Navigation */
-    .site-nav {
-        background-color: #000000;
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 40px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        flex-wrap: wrap;
-        gap: 15px;
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 
-    .site-logo {
-        color: var(--gold-primary);
-        font-size: 1.4rem;
-        font-weight: bold;
-        text-decoration: none;
-        letter-spacing: 1px;
+    .container {
+        width: min(1120px, 92%);
+        margin: auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(8, 8, 8, 0.94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .logo {
+        color: var(--gold);
+        font-size: 22px;
+        font-weight: 800;
+        white-space: nowrap;
     }
 
     .nav-links {
         display: flex;
-        gap: 20px;
-        list-style: none;
         align-items: center;
+        gap: 22px;
         flex-wrap: wrap;
     }
 
     .nav-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: color 0.3s;
+        color: #ddd;
+        font-size: 14px;
+        transition: 0.2s;
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-        color: var(--gold-primary);
+    .nav-links .active {
+        color: var(--gold);
     }
 
-    /* Dropdown */
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: var(--card-bg);
-        min-width: 180px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.8);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        display: block;
-        padding: 10px 15px;
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.9rem;
-    }
-
-    .dropdown-content a:hover {
-        background-color: var(--gold-primary);
-        color: #000;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Hero */
-    header {
-        background: linear-gradient(135deg, #111111, #000000);
-        border-bottom: 2px solid var(--gold-primary);
+    /* HERO */
+    .hero {
         text-align: center;
-        padding: 55px 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+        padding: 90px 20px 75px;
+        background:
+            radial-gradient(circle at 50% 15%, rgba(255, 215, 0, 0.12), transparent 40%);
     }
 
-    header h1 {
-        color: var(--gold-primary);
-        font-size: 2.8rem;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
+    .hero h1 {
+        font-size: clamp(38px, 7vw, 68px);
+        line-height: 1.05;
+        margin-bottom: 18px;
     }
 
-    header p {
-        color: var(--text-muted);
-        font-size: 1.15rem;
-        max-width: 700px;
+    .hero h1 span {
+        color: var(--gold);
+    }
+
+    .hero p {
+        max-width: 720px;
         margin: auto;
+        color: var(--muted);
+        font-size: 18px;
     }
 
-    .hero-buttons {
-        margin-top: 25px;
+    .buttons {
+        margin-top: 30px;
         display: flex;
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
         flex-wrap: wrap;
     }
 
-    .btn-gold,
-    .btn-dark {
+    .btn {
         display: inline-block;
-        padding: 11px 22px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
+        padding: 12px 22px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        border: 1px solid var(--gold);
+        transition: 0.2s;
     }
 
-    .btn-gold {
-        background-color: var(--gold-primary);
+    .btn-primary {
+        background: var(--gold);
         color: #000;
     }
 
-    .btn-gold:hover {
-        background-color: var(--gold-light);
-        box-shadow: 0 0 15px rgba(255,215,0,0.4);
+    .btn-secondary {
+        color: var(--gold);
     }
 
-    .btn-dark {
-        background-color: #111;
-        color: var(--gold-primary);
-        border: 1px solid var(--border-color);
+    .btn:hover {
+        transform: translateY(-2px);
     }
 
-    .btn-dark:hover {
-        border-color: var(--gold-primary);
-    }
-
-    /* Main */
-    .container {
-        max-width: 1300px;
-        margin: 40px auto;
-        padding: 0 20px;
+    /* SECTIONS */
+    section {
+        padding: 65px 0;
     }
 
     .section-heading {
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 38px;
     }
 
     .section-heading h2 {
-        color: var(--gold-light);
-        font-size: 1.9rem;
-        margin-bottom: 7px;
-    }
-
-    .section-heading p {
-        color: var(--text-muted);
-    }
-
-    /* Quick Links */
-    .quick-links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-bottom: 45px;
-    }
-
-    .quick-card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 22px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--text-main);
-        transition: 0.3s;
-    }
-
-    .quick-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--gold-primary);
-    }
-
-    .quick-card span {
-        display: block;
-        font-size: 1.8rem;
+        font-size: 32px;
         margin-bottom: 8px;
     }
 
-    .quick-card h3 {
-        color: var(--gold-light);
-        font-size: 1.05rem;
+    .section-heading p {
+        color: var(--muted);
     }
 
-    .quick-card p {
-        color: var(--text-muted);
-        font-size: 0.85rem;
-        margin-top: 5px;
-    }
-
-    /* Gallery Filters */
-    .filter-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 30px;
-    }
-
-    .filter-btn {
-        background-color: var(--card-bg);
-        color: var(--gold-primary);
-        border: 1px solid var(--border-color);
-        padding: 10px 20px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-        background-color: var(--gold-primary);
-        color: #000000;
-        box-shadow: 0 0 15px rgba(255,215,0,0.35);
-    }
-
-    /* Gallery */
-    .grid {
+    /* MAIN SECTIONS */
+    .cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 22px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
     }
 
     .card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 14px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+        background: linear-gradient(145deg, var(--card), var(--card2));
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 25px 20px;
+        transition: 0.25s;
     }
 
     .card:hover {
-        transform: translateY(-5px);
-        border-color: var(--gold-primary);
+        transform: translateY(-4px);
+        border-color: rgba(255, 215, 0, 0.45);
     }
 
-    .card img {
-        width: 100%;
-        height: 320px;
-        object-fit: contain;
-        background-color: #000;
-        padding: 10px;
-        border-bottom: 1px solid #222;
+    .icon {
+        font-size: 30px;
+        margin-bottom: 12px;
     }
 
-    .card-content {
-        padding: 18px;
+    .card h3 {
+        color: var(--gold);
+        margin-bottom: 9px;
+        font-size: 19px;
     }
 
-    .card-content h3 {
+    .card p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .card-link {
         color: var(--gold-light);
-        font-size: 1.2rem;
-        margin-bottom: 7px;
+        font-size: 14px;
+        font-weight: 700;
     }
 
-    .card-content p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
+    /* INFORMATION */
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
     }
 
-    /* Footer */
-    footer {
-        text-align: center;
-        padding: 40px 20px;
-        background-color: #040404;
-        color: var(--text-muted);
-        border-top: 1px solid #1a1a1a;
-        margin-top: 60px;
+    .info-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 23px;
     }
 
-    .footer-links {
+    .info-card h3 {
+        margin-bottom: 8px;
+        color: var(--gold);
+    }
+
+    .info-card p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .info-card a {
+        color: var(--gold-light);
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    /* GALLERY */
+    .gallery-section {
+        background: #0b0b0b;
+    }
+
+    .filters {
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: 8px;
         flex-wrap: wrap;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
     }
 
-    .footer-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.9rem;
+    .filter-btn {
+        background: var(--card);
+        color: #ddd;
+        border: 1px solid var(--border);
+        padding: 8px 14px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 13px;
     }
 
-    .footer-links a:hover {
-        color: var(--gold-primary);
+    .filter-btn.active,
+    .filter-btn:hover {
+        background: var(--gold);
+        color: #000;
     }
 
-    @media (max-width: 700px) {
-        .site-nav {
-            padding: 14px 18px;
-            justify-content: center;
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .gallery-card img {
+        width: 100%;
+        height: 260px;
+        display: block;
+        object-fit: cover;
+    }
+
+    .gallery-card h3 {
+        padding: 11px 12px;
+        font-size: 14px;
+        color: #eee;
+    }
+
+    /* FOOTER */
+    footer {
+        border-top: 1px solid var(--border);
+        padding: 40px 0 25px;
+        background: #050505;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 35px;
+    }
+
+    footer h3 {
+        color: var(--gold);
+        margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    footer a {
+        display: block;
+        margin: 6px 0;
+    }
+
+    footer a:hover {
+        color: var(--gold);
+    }
+
+    .copyright {
+        text-align: center;
+        color: #777;
+        font-size: 12px;
+        margin-top: 35px;
+        padding-top: 20px;
+        border-top: 1px solid #181818;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gallery {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .gallery-card img {
+            height: 230px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .nav-inner {
+            padding: 12px 0;
+            align-items: flex-start;
+            flex-direction: column;
         }
 
         .nav-links {
-            justify-content: center;
             gap: 12px;
         }
 
-        header {
-            padding: 42px 18px;
+        .hero {
+            padding: 65px 15px 55px;
         }
 
-        header h1 {
-            font-size: 2.2rem;
+        section {
+            padding: 50px 0;
         }
 
-        header p {
-            font-size: 1rem;
+        .cards,
+        .info-grid,
+        .gallery,
+        .footer-grid {
+            grid-template-columns: 1fr;
         }
 
-        .card img {
-            height: 280px;
+        .gallery-card img {
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            background: #000;
         }
     }
 </style>
 
-</head><body><!-- Global Navigation -->
-<nav class="site-nav">
-    <a href="index.html" class="site-logo">⚡ GENI AI HUB</a>
-
-    <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="pages/features.html">Features</a></li>
-        <li><a href="pages/wallet.html">Wallet & Store</a></li>
-
-        <li class="dropdown">
-            <a href="pages/account-safety.html">Account & Safety ▾</a>
-
-            <div class="dropdown-content">
-                <a href="pages/account-safety.html">Account Overview</a>
-                <a href="pages/privacy-policy.html">Privacy Policy</a>
-                <a href="pages/terms.html">Terms of Service</a>
-                <a href="pages/delete-account.html">Delete Account</a>
-            </div>
-        </li>
-
-        <li><a href="pages/support.html">Support</a></li>
-    </ul>
-</nav>
-
-<!-- Hero -->
-<header>
-    <h1>Geni AI Global Hub</h1>
-    <p>Official Mobile App Features & Screens Gallery</p>
-
-    <div class="hero-buttons">
-        <a href="#gallery" class="btn-gold">Explore Gallery</a>
-        <a href="pages/features.html" class="btn-dark">View Features</a>
-    </div>
-</header>
-
-<main class="container">
-
-    <!-- Quick Access -->
-    <section>
-        <div class="section-heading">
-            <h2>Geni AI Hub</h2>
-            <p>Quick access to the main sections of our official website.</p>
-        </div>
-
-        <div class="quick-links">
-            <a href="pages/features.html" class="quick-card">
-                <span>🤖</span>
-                <h3>AI Features</h3>
-                <p>Explore our AI creative tools.</p>
-            </a>
-
-            <a href="pages/wallet.html" class="quick-card">
-                <span>💰</span>
-                <h3>Wallet & Store</h3>
-                <p>Rewards, coins and store information.</p>
-            </a>
-
-            <a href="pages/account-safety.html" class="quick-card">
-                <span>🛡️</span>
-                <h3>Account & Safety</h3>
-                <p>Account, privacy and safety information.</p>
-            </a>
-
-            <a href="pages/support.html" class="quick-card">
-                <span>💬</span>
-                <h3>Support</h3>
-                <p>Get help and contact our support team.</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery">
-
-        <div class="section-heading">
-            <h2>App Gallery</h2>
-            <p>Explore screenshots and major sections of Geni AI.</p>
-        </div>
-
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="filterGallery('all', this)">📂 All</button>
-            <button class="filter-btn" onclick="filterGallery('ai', this)">🤖 AI Studio</button>
-            <button class="filter-btn" onclick="filterGallery('wallet', this)">💰 Wallet & Store</button>
-            <button class="filter-btn" onclick="filterGallery('tools', this)">🛠️ Tools & History</button>
-            <button class="filter-btn" onclick="filterGallery('profile', this)">👤 Profile & Safety</button>
-        </div>
-
-        <div class="grid" id="galleryGrid">
-
-            <div class="card" data-category="profile">
-                <img src="images/home.jpg" alt="Home">
-                <div class="card-content">
-                    <h3>Main Dashboard</h3>
-                    <p>Central screen showing AI features and live coin balances simultaneously.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="ai">
-                <img src="images/image-generation.jpg" alt="Image Generation">
-                <div class="card-content">
-                    <h3>AI Image Generation</h3>
-                    <p>Powerful studio module for generating creative images.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="ai">
-                <img src="images/image-editor-dp.jpg" alt="Image Editor">
-                <div class="card-content">
-                    <h3>Image Editor & DP</h3>
-                    <p>Tools for editing and preparing profile pictures.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="ai">
-                <img src="images/video-ai.jpg" alt="Video AI">
-                <div class="card-content">
-                    <h3>Video AI Studio</h3>
-                    <p>AI-powered video generation and management.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="ai">
-                <img src="images/voice-ai.jpg" alt="Voice AI">
-                <div class="card-content">
-                    <h3>Voice AI Module</h3>
-                    <p>Voice cloning, synthesis and audio processing tools.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/wallet-rewards-menu.jpg" alt="Wallet">
-                <div class="card-content">
-                    <h3>Wallet & Rewards Menu</h3>
-                    <p>Coin balance, rewards and referral access.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/watch-ad-reward.jpg" alt="Ad Reward">
-                <div class="card-content">
-                    <h3>Ad Reward System</h3>
-                    <p>Earn free currency through rewarded advertisements.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/store.jpg" alt="Store">
-                <div class="card-content">
-                    <h3>Credit Store</h3>
-                    <p>Gold and silver coin package options.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/store 1.jpg" alt="Store 1">
-                <div class="card-content">
-                    <h3>Credit Store Options</h3>
-                    <p>Additional credit offers and bundle pricing.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/invite.jpg" alt="Invite">
-                <div class="card-content">
-                    <h3>Referral Invite System</h3>
-                    <p>Invite friends using QR codes and referral links.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/audio-tools.jpg" alt="Audio Tools">
-                <div class="card-content">
-                    <h3>Audio Tools</h3>
-                    <p>Recording and high-quality audio utilities.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/voice-library.jpg" alt="Voice Library">
-                <div class="card-content">
-                    <h3>Voice Library</h3>
-                    <p>Saved voice clips, samples and generated outputs.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/history.jpg" alt="History">
-                <div class="card-content">
-                    <h3>General History</h3>
-                    <p>Activity and previous user events.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/image-history.jpg" alt="Image History">
-                <div class="card-content">
-                    <h3>Image History</h3>
-                    <p>Previously generated images and artwork.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/video-history.jpg" alt="Video History">
-                <div class="card-content">
-                    <h3>Video History</h3>
-                    <p>Previously created AI videos and records.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/voice-history.jpg" alt="Voice History">
-                <div class="card-content">
-                    <h3>Voice History</h3>
-                    <p>Previous voice generations and task records.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="profile">
-                <img src="images/profile.jpg" alt="Profile">
-                <div class="card-content">
-                    <h3>User Profile</h3>
-                    <p>Account settings and personal preferences.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="profile">
-                <img src="images/account-safety.jpg" alt="Safety">
-                <div class="card-content">
-                    <h3>Account Safety</h3>
-                    <p>Security guidelines and account protection.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="profile">
-                <img src="images/ai-error.jpg" alt="Error Handling">
-                <div class="card-content">
-                    <h3>System Alert / Notice</h3>
-                    <p>Guidance for network and server-related errors.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-links">
-        <a href="index.html">Home</a>
+</head><body><!-- NAVIGATION --><nav>
+    <div class="container nav-inner">
+        <a href="index.html" class="logo">Geni AI</a>    <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
         <a href="pages/features.html">Features</a>
-        <a href="pages/wallet.html">Wallet & Store</a>
-        <a href="pages/privacy-policy.html">Privacy Policy</a>
-        <a href="pages/terms.html">Terms of Service</a>
-        <a href="pages/delete-account.html">Delete Account</a>
+        <a href="pages/wallet.html">Wallet</a>
+        <a href="pages/account-safety.html">Account & Safety</a>
         <a href="pages/support.html">Support</a>
     </div>
+</div>
 
-    <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
-</footer>
+</nav><!-- HERO --><header class="hero">
+    <div class="container">
+        <h1>Welcome to <span>Geni AI</span></h1>    <p>
+        Explore the official Geni AI Global Hub — discover AI tools,
+        image and video creation, voice features, wallet rewards,
+        account safety information and support.
+    </p>
 
-<script>
+    <div class="buttons">
+        <a href="pages/features.html" class="btn btn-primary">
+            Explore Features
+        </a>
+
+        <a href="#gallery" class="btn btn-secondary">
+            View App Gallery
+        </a>
+    </div>
+</div>
+
+</header><!-- MAIN SECTIONS --><section>
+    <div class="container">    <div class="section-heading">
+        <h2>Explore Geni AI</h2>
+        <p>Everything important is organized into dedicated pages.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>AI Features</h3>
+            <p>
+                Explore image generation, image editing, video,
+                voice and other AI tools available in Geni AI.
+            </p>
+            <a class="card-link" href="pages/features.html">
+                View Features →
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>Wallet & Store</h3>
+            <p>
+                Learn about rewards, credits, store packages,
+                ads and the referral invite system.
+            </p>
+            <a class="card-link" href="pages/wallet.html">
+                Open Wallet Guide →
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Account & Safety</h3>
+            <p>
+                Find account safety information, privacy details,
+                terms and account deletion options.
+            </p>
+            <a class="card-link" href="pages/account-safety.html">
+                Account & Safety →
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💬</div>
+            <h3>Support</h3>
+            <p>
+                Need help with Geni AI? Visit the support page
+                for available contact and community options.
+            </p>
+            <a class="card-link" href="pages/support.html">
+                Get Support →
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</section><!-- WEBSITE INFORMATION --><section>
+    <div class="container">    <div class="section-heading">
+        <h2>Policies & Account</h2>
+        <p>Read the complete official information on each dedicated page.</p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <h3>Privacy Policy</h3>
+            <p>
+                Learn how Geni AI handles information, privacy
+                and related data practices.
+            </p>
+            <a href="pages/privacy-policy.html">
+                Read Privacy Policy →
+            </a>
+        </div>
+
+        <div class="info-card">
+            <h3>Terms of Service</h3>
+            <p>
+                Review the terms covering Geni AI services,
+                AI generation and store transactions.
+            </p>
+            <a href="pages/terms.html">
+                Read Terms →
+            </a>
+        </div>
+
+        <div class="info-card">
+            <h3>Delete Account</h3>
+            <p>
+                Use the official account deletion page if you
+                want to permanently delete your Geni AI account.
+            </p>
+            <a href="pages/delete-account.html">
+                Delete Account →
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</section><!-- APP GALLERY --><section class="gallery-section" id="gallery">
+    <div class="container">    <div class="section-heading">
+        <h2>Geni AI App Gallery</h2>
+        <p>Preview the main screens and features of the Geni AI app.</p>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">
+            All
+        </button>
+
+        <button class="filter-btn" onclick="filterGallery('ai', this)">
+            AI
+        </button>
+
+        <button class="filter-btn" onclick="filterGallery('wallet', this)">
+            Wallet
+        </button>
+
+        <button class="filter-btn" onclick="filterGallery('history', this)">
+            History
+        </button>
+
+        <button class="filter-btn" onclick="filterGallery('account', this)">
+            Account
+        </button>
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/home.jpg" alt="Geni AI Home">
+            <h3>Geni AI Home</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/image-generation.jpg" alt="Image Generation">
+            <h3>Image Generation</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/image-editor-dp.jpg" alt="Image Editor">
+            <h3>Image Editor</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/video-ai.jpg" alt="Video AI">
+            <h3>Video AI</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/voice-ai.jpg" alt="Voice AI">
+            <h3>Voice AI</h3>
+        </div>
+
+        <div class="gallery-card" data-category="wallet">
+            <img src="images/wallet-rewards-menu.jpg" alt="Wallet Rewards">
+            <h3>Wallet & Rewards</h3>
+        </div>
+
+        <div class="gallery-card" data-category="wallet">
+            <img src="images/watch-ad-reward.jpg" alt="Watch Ad Reward">
+            <h3>Ad Reward</h3>
+        </div>
+
+        <div class="gallery-card" data-category="wallet">
+            <img src="images/store.jpg" alt="Credit Store">
+            <h3>Credit Store</h3>
+        </div>
+
+        <div class="gallery-card" data-category="wallet">
+            <img src="images/store 1.jpg" alt="Store Packages">
+            <h3>Store Packages</h3>
+        </div>
+
+        <div class="gallery-card" data-category="wallet">
+            <img src="images/invite.jpg" alt="Invite System">
+            <h3>Referral Invite</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/audio-tools.jpg" alt="Audio Tools">
+            <h3>Audio Tools</h3>
+        </div>
+
+        <div class="gallery-card" data-category="ai">
+            <img src="images/voice-library.jpg" alt="Voice Library">
+            <h3>Voice Library</h3>
+        </div>
+
+        <div class="gallery-card" data-category="history">
+            <img src="images/history.jpg" alt="History">
+            <h3>History</h3>
+        </div>
+
+        <div class="gallery-card" data-category="history">
+            <img src="images/image-history.jpg" alt="Image History">
+            <h3>Image History</h3>
+        </div>
+
+        <div class="gallery-card" data-category="history">
+            <img src="images/video-history.jpg" alt="Video History">
+            <h3>Video History</h3>
+        </div>
+
+        <div class="gallery-card" data-category="history">
+            <img src="images/voice-history.jpg" alt="Voice History">
+            <h3>Voice History</h3>
+        </div>
+
+        <div class="gallery-card" data-category="account">
+            <img src="images/profile.jpg" alt="Profile">
+            <h3>Profile</h3>
+        </div>
+
+        <div class="gallery-card" data-category="account">
+            <img src="images/account-safety.jpg" alt="Account Safety">
+            <h3>Account & Safety</h3>
+        </div>
+
+        <div class="gallery-card" data-category="account">
+            <img src="images/ai-error.jpg" alt="AI Error">
+            <h3>AI Error & Safety</h3>
+        </div>
+
+    </div>
+</div>
+
+</section><!-- FOOTER --><footer>
+    <div class="container">    <div class="footer-grid">
+
+        <div>
+            <h3>Geni AI</h3>
+            <p>
+                Official Geni AI Global Hub for app features,
+                wallet information, policies, account safety
+                and support.
+            </p>
+        </div>
+
+        <div>
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="pages/features.html">Features</a>
+            <a href="pages/wallet.html">Wallet & Store</a>
+            <a href="pages/support.html">Support</a>
+        </div>
+
+        <div>
+            <h3>Important</h3>
+            <a href="pages/privacy-policy.html">Privacy Policy</a>
+            <a href="pages/terms.html">Terms of Service</a>
+            <a href="pages/account-safety.html">Account & Safety</a>
+            <a href="pages/delete-account.html">Delete Account</a>
+            <a href="https://whatsapp.com/channel/0029Vb8SKApE50UoFQ3PCT0d" target="_blank">
+                WhatsApp Channel
+            </a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Geni AI Global Hub. All rights reserved.
+    </div>
+
+</div>
+
+</footer><script>
     function filterGallery(category, button) {
+        const cards = document.querySelectorAll('.gallery-card');
         const buttons = document.querySelectorAll('.filter-btn');
 
-        buttons.forEach(btn => {
-            btn.classList.remove('active');
-        });
-
+        buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
-        const cards = document.querySelectorAll('.card');
-
         cards.forEach(card => {
-            if (
-                category === 'all' ||
-                card.getAttribute('data-category') === category
-            ) {
-                card.style.display = 'block';
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = '';
             } else {
                 card.style.display = 'none';
             }
         });
     }
-</script>
-
-</body>
+</script></body>
 </html>
