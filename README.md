@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geni AI Global Hub - Interactive Gallery</title>
+    <title>Geni AI Global Hub - Official Gallery</title>
     <style>
         :root {
             --bg-color: #080808;
@@ -25,7 +25,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            direction: rtl;
             line-height: 1.6;
         }
 
@@ -55,7 +54,6 @@
             padding: 0 20px;
         }
 
-        /* گیلری فولڈر ٹیبز (Categories Filters) */
         .filter-container {
             display: flex;
             justify-content: center;
@@ -82,7 +80,6 @@
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
-        /* کارڈز کا گرڈ لے آؤٹ */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -142,190 +139,171 @@
 
     <header>
         <h1>Geni AI Global Hub</h1>
-        <p>آفیشل فیچرز گیلری اور اسکرین اسٹوڈیو</p>
+        <p>Official Mobile App Features & Screens Gallery</p>
     </header>
 
     <div class="container">
-        <!-- فولڈر کیٹیگریز (فلٹر ٹیبز) -->
+        <!-- Categories Filter -->
         <div class="filter-container">
-            <button class="filter-btn active" onclick="filterGallery('all')">📂 تمام فولڈرز (All)</button>
-            <button class="filter-btn" onclick="filterGallery('ai')">🤖 اے آئی اسٹوڈیو (AI Studio)</button>
-            <button class="filter-btn" onclick="filterGallery('wallet')">💰 والٹ اور اسٹور (Wallet & Store)</button>
-            <button class="filter-btn" onclick="filterGallery('tools')">🛠️ ٹولز اور ہسٹری (Tools)</button>
-            <button class="filter-btn" onclick="filterGallery('profile')">👤 پروفাইল اور سیفٹی (Profile)</button>
+            <button class="filter-btn active" onclick="filterGallery('all')">📂 All Folders</button>
+            <button class="filter-btn" onclick="filterGallery('ai')">🤖 AI Studio</button>
+            <button class="filter-btn" onclick="filterGallery('wallet')">💰 Wallet & Store</button>
+            <button class="filter-btn" onclick="filterGallery('tools')">🛠️ Tools & History</button>
+            <button class="filter-btn" onclick="filterGallery('profile')">👤 Profile & Safety</button>
         </div>
 
-        <!-- گیلری گرید -->
+        <!-- Gallery Grid -->
         <div class="grid" id="galleryGrid">
 
-            <!-- Home -->
             <div class="card" data-category="profile">
-                <img src="Images/home.jpg" alt="Home">
+                <img src="images/home.jpg" alt="Home">
                 <div class="card-content">
-                    <h3>مین ڈیش بورڈ (Home)</h3>
-                    <p>مرکزی اسکرین جہاں سے تمام فیچرز اور کوئنز تک رسائی ہوتی ہے۔</p>
+                    <h3>Main Dashboard</h3>
+                    <p>Central screen showing AI features and live coin balances simultaneously.</p>
                 </div>
             </div>
 
-            <!-- Image Generation -->
             <div class="card" data-category="ai">
-                <img src="Images/image-generation.jpg" alt="Image Generation">
+                <img src="images/image-generation.jpg" alt="Image Generation">
                 <div class="card-content">
-                    <h3>اے آئی امیج جنریشن</h3>
-                    <p>خوبصورت تصاویر تخلیق کرنے کا طاقتور اسٹوڈیو ماڈیول۔</p>
+                    <h3>AI Image Generation</h3>
+                    <p>Powerful studio module designed for generating stunning and creative images.</p>
                 </div>
             </div>
 
-            <!-- Image Editor DP -->
             <div class="card" data-category="ai">
-                <img src="Images/image-editor-dp.jpg" alt="Image Editor">
+                <img src="images/image-editor-dp.jpg" alt="Image Editor">
                 <div class="card-content">
-                    <h3>امیج ایڈیٹر اور ڈی پی</h3>
-                    <p>تصاویر کو ری سائز اور ایڈٹ کرنے کا انٹرفیس۔</p>
+                    <h3>Image Editor & DP</h3>
+                    <p>Interface for editing, resizing, and tailoring pictures for profile displays.</p>
                 </div>
             </div>
 
-            <!-- Video AI -->
             <div class="card" data-category="ai">
-                <img src="Images/video-ai.jpg" alt="Video AI">
+                <img src="images/video-ai.jpg" alt="Video AI">
                 <div class="card-content">
-                    <h3>ویڈیو اے آئی اسٹوڈیو</h3>
-                    <p>جدید ویڈیو جنریشن اور ایڈیٹنگ کی اسکرین۔</p>
+                    <h3>Video AI Studio</h3>
+                    <p>Advanced cutting-edge module to generate and manage AI videos seamlessly.</p>
                 </div>
             </div>
 
-            <!-- Voice AI -->
             <div class="card" data-category="ai">
-                <img src="Images/voice-ai.jpg" alt="Voice AI">
+                <img src="images/voice-ai.jpg" alt="Voice AI">
                 <div class="card-content">
-                    <h3>وائس اے آئی ماڈیول</h3>
-                    <p>آواز اور صوتی خصوصیات کا شاندار انٹرفیس۔</p>
+                    <h3>Voice AI Module</h3>
+                    <p>Stunning interface for voice cloning, synthesis, and audio processing.</p>
                 </div>
             </div>
 
-            <!-- Wallet Rewards Menu -->
             <div class="card" data-category="wallet">
-                <img src="Images/wallet-rewards-menu.jpg" alt="Wallet">
+                <img src="images/wallet-rewards-menu.jpg" alt="Wallet">
                 <div class="card-content">
-                    <h3>والٹ اور ریوارڈز مینو</h3>
-                    <p>کوئنز بیلنس، ڈیلی چیک ان اور ریفرل سسٹم کا مرکز۔</p>
+                    <h3>Wallet & Rewards Menu</h3>
+                    <p>Complete financial hub managing coin balance, daily check-ins, and referrals.</p>
                 </div>
             </div>
 
-            <!-- Watch Ad Reward -->
             <div class="card" data-category="wallet">
-                <img src="Images/watch-ad-reward.jpg" alt="Ad Reward">
+                <img src="images/watch-ad-reward.jpg" alt="Ad Reward">
                 <div class="card-content">
-                    <h3>ایڈ ریوارڈ سسٹم</h3>
-                    <p>اشتہار دیکھ کر مفت کریڈٹس اور پوائنٹس حاصل کرنے کی اسکرین۔</p>
+                    <h3>Ad Reward System</h3>
+                    <p>Earn free currency instantly by watching rewarded video advertisements.</p>
                 </div>
             </div>
 
-            <!-- Store -->
             <div class="card" data-category="wallet">
-                <img src="Images/store.jpg" alt="Store">
+                <img src="images/store.jpg" alt="Store">
                 <div class="card-content">
-                    <h3>کریڈٹ اسٹور 1</h3>
-                    <p>گولڈ اور سلور پیکیجز کی خریداری کا آفیشل اسٹور۔</p>
+                    <h3>Credit Store (Package 1)</h3>
+                    <p>Store interface to purchase affordable gold and silver coin packages.</p>
                 </div>
             </div>
 
-            <!-- Store 1 -->
             <div class="card" data-category="wallet">
-                <img src="Images/store 1.jpg" alt="Store 1">
+                <img src="images/store 1.jpg" alt="Store 1">
                 <div class="card-content">
-                    <h3>کریڈٹ اسٹور 2</h3>
-                    <p>مزید پیکیجز اور آفرز کی تفصیلات پر مشتمل اسکرین۔</p>
+                    <h3>Credit Store (Package 2)</h3>
+                    <p>Detailed listing of additional credit offers and bundle pricing.</p>
                 </div>
             </div>
 
-            <!-- Invite -->
             <div class="card" data-category="wallet">
-                <img src="Images/invite.jpg" alt="Invite">
+                <img src="images/invite.jpg" alt="Invite">
                 <div class="card-content">
-                    <h3>ریفرل انوائٹ سسٹم</h3>
-                    <p>دوستوں کو دعوت دے کر اضافی کوئنز کمانے کا صفحہ۔</p>
+                    <h3>Referral Invite System</h3>
+                    <p>Invite friends via QR code sharing to earn bonus coins together.</p>
                 </div>
             </div>
 
-            <!-- Audio Tools -->
             <div class="card" data-category="tools">
-                <img src="Images/audio-tools.jpg" alt="Audio Tools">
+                <img src="images/audio-tools.jpg" alt="Audio Tools">
                 <div class="card-content">
-                    <h3>آڈیو ٹولز</h3>
-                    <p>آڈیو ریکارڈنگ اور پلے بیک کی سہولیات۔</p>
+                    <h3>Audio Tools</h3>
+                    <p>Modern utilities supporting microphone recording and high-quality audio playback.</p>
                 </div>
             </div>
 
-            <!-- Voice Library -->
             <div class="card" data-category="tools">
-                <img src="Images/voice-library.jpg" alt="Voice Library">
+                <img src="images/voice-library.jpg" alt="Voice Library">
                 <div class="card-content">
-                    <h3>وائس لائبریری</h3>
-                    <p>محفوظ شدہ آوازوں اور کلپس کا ذخیرہ۔</p>
+                    <h3>Voice Library</h3>
+                    <p>Organized repository storing saved voice clips, audio samples, and outputs.</p>
                 </div>
             </div>
 
-            <!-- History -->
             <div class="card" data-category="tools">
-                <img src="Images/history.jpg" alt="History">
+                <img src="images/history.jpg" alt="History">
                 <div class="card-content">
-                    <h3>جنرل ہسٹری</h3>
-                    <p>آپ کے پچھلے تمام سیشنز اور سرگرمیوں کا ریکارڈ۔</p>
+                    <h3>General History</h3>
+                    <p>Comprehensive activity log tracking all previous user sessions and events.</p>
                 </div>
             </div>
 
-            <!-- Image History -->
             <div class="card" data-category="tools">
-                <img src="Images/image-history.jpg" alt="Image History">
+                <img src="images/image-history.jpg" alt="Image History">
                 <div class="card-content">
-                    <h3>امیج ہسٹری</h3>
-                    <p>پہلے سے بنائی گئی تمام تصاویر کا ریکارڈ۔</p>
+                    <h3>Image History</h3>
+                    <p>Dedicated gallery archiving previously generated images and artwork.</p>
                 </div>
             </div>
 
-            <!-- Video History -->
             <div class="card" data-category="tools">
-                <img src="Images/video-history.jpg" alt="Video History">
+                <img src="images/video-history.jpg" alt="Video History">
                 <div class="card-content">
-                    <h3>ویڈیو ہسٹری</h3>
-                    <p>تخلیق کردہ ویڈیوز کی ہسٹری اسکرین۔</p>
+                    <h3>Video History</h3>
+                    <p>Playback panel and record log of all previously created AI videos.</p>
                 </div>
             </div>
 
-            <!-- Voice History -->
             <div class="card" data-category="tools">
-                <img src="Images/voice-history.jpg" alt="Voice History">
+                <img src="images/voice-history.jpg" alt="Voice History">
                 <div class="card-content">
-                    <h3>وائس ہسٹری</h3>
-                    <p>پچھلی وائس جنریشنز کی تفصیلات۔</p>
+                    <h3>Voice History</h3>
+                    <p>Detailed breakdown and logs of previous voice generations and tasks.</p>
                 </div>
             </div>
 
-            <!-- Profile -->
             <div class="card" data-category="profile">
-                <img src="Images/profile.jpg" alt="Profile">
+                <img src="images/profile.jpg" alt="Profile">
                 <div class="card-content">
-                    <h3>یوزر پروفাইল</h3>
-                    <p>اکاؤنٹ کی بنیادی معلومات اور ترتیبات۔</p>
+                    <h3>User Profile</h3>
+                    <p>Account settings, user identification, and personal preference controls.</p>
                 </div>
             </div>
 
-            <!-- Account Safety -->
             <div class="card" data-category="profile">
-                <img src="Images/account-safety.jpg" alt="Safety">
+                <img src="images/account-safety.jpg" alt="Safety">
                 <div class="card-content">
-                    <h3>اکاؤنٹ سیکیورٹی</h3>
-                    <p>حفاظتی ضوابط اور اکاؤنٹ پروٹیکشن مینو۔</p>
+                    <h3>Account Safety</h3>
+                    <p>Security guidelines, policy warnings, and account protection hub.</p>
                 </div>
             </div>
 
-            <!-- AI Error -->
             <div class="card" data-category="profile">
-                <img src="Images/ai-error.jpg" alt="Error Handling">
+                <img src="images/ai-error.jpg" alt="Error Handling">
                 <div class="card-content">
-                    <h3>سسٹم نوٹیفیکیشن / الرٹ</h3>
-                    <p>نیٹ ورک یا سرور ایرر کی صورت میں گائیڈنس اسکرین۔</p>
+                    <h3>System Alert / Notice</h3>
+                    <p>Guidance screen helping users handle network connection or server errors.</p>
                 </div>
             </div>
 
@@ -333,17 +311,15 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Geni AI Global Hub. تمام حقوق محفوظ ہیں۔</p>
+        <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
     </footer>
 
     <script>
         function filterGallery(category) {
-            // بٹن کی ایکٹیو کلاس تبدیل کرنا
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // کارڈز کو فلٹر کرنا
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
