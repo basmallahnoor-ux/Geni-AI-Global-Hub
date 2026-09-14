@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Geni AI Global Hub</title>
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #141414;
+            --gold-primary: #ffd700;
+            --gold-light: #ffea75;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #332d00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Top Website Global Navigation Bar */
+        .site-nav {
+            background-color: #000000;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .site-logo {
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold-primary);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: var(--text-muted);
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--gold-primary);
+            color: #000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        header {
+            background: linear-gradient(135deg, #111111, #000000);
+            border-bottom: 2px solid var(--gold-primary);
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        header h1 {
+            color: var(--gold-primary);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .policy-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .policy-content h2 {
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 8px;
+        }
+
+        .policy-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .policy-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 215, 0, 0.1);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #040404;
+            color: var(--text-muted);
+            border-top: 1px solid #1a1a1a;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Website Global Navigation -->
+    <nav class="site-nav">
+        <a href="../index.html" class="site-logo">⚡ GENI AI HUB</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="wallet.html">Wallet & Store</a></li>
+            <li class="dropdown">
+                <a href="account-safety.html" class="active">Account & Safety ▾</a>
+                <div class="dropdown-content">
+                    <a href="account-safety.html">Account Overview</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="delete-account.html">Delete Account</a>
+                </div>
+            </li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: September 2026</p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <span class="tag">Legal Compliance</span>
+            
+            <h2>1. Introduction</h2>
+            <p>Welcome to <strong>Geni AI Global Hub</strong> ("we", "our", or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy informs you how we look after your personal data when you use our mobile application and website, and tells you about your privacy rights and how the law protects you.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+            <ul>
+                <li><strong>Identity Data:</strong> Includes username, profile identifier, or similar identifiers.</li>
+                <li><strong>Contact Data:</strong> Includes email addresses provided during registration or support inquiries.</li>
+                <li><strong>Technical Data:</strong> Includes device model, operating system version, and unique device identifiers.</li>
+                <li><strong>Usage Data:</strong> Includes information about how you use our app, generated AI prompts, and credit transactions.</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+            <ul>
+                <li>To provide and maintain our AI generation services and user accounts.</li>
+                <li>To manage your dual-currency balances, coin transactions, and store purchases.</li>
+                <li>To notify you about changes to our service or policies.</li>
+                <li>To provide customer support and handle account deletion requests.</li>
+            </ul>
+
+            <h2>4. Data Security</h2>
+            <p>We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way. Access to your personal data is restricted to authorized servers and secure Cloudflare backend databases.</p>
+
+            <h2>5. Your Legal Rights</h2>
+            <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, or complete deletion of your personal data and account records.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about this privacy policy or our privacy practices, please contact us through our <a href="support.html" style="color: var(--gold-primary);">Support Page</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="wallet.html">Wallet & Store</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="delete-account.html">Delete Account</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
