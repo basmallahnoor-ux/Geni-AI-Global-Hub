@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geni AI Global Hub - Official Gallery</title>
+    <title>Geni AI Global Hub - Official Gallery & Hub</title>
     <style>
         :root {
-            --bg-color: #080808;
-            --card-bg: #141414;
+            --bg-color: #050505;
+            --card-bg: #121212;
+            --card-hover: #1a1a1a;
             --gold-primary: #ffd700;
-            --gold-light: #ffea75;
+            --gold-light: #ffe875;
+            --gold-dark: #ccab00;
             --text-main: #ffffff;
-            --text-muted: #a0a0a0;
+            --text-muted: #b0b0b0;
             --border-color: #332d00;
+            --border-glow: rgba(255, 215, 0, 0.3);
         }
 
         * {
@@ -26,50 +29,157 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Top Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold-primary);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Hero Header */
         header {
-            background: linear-gradient(135deg, #111111, #000000);
-            border-bottom: 2px solid var(--gold-primary);
+            background: radial-gradient(circle at center, #1a1600 0%, #080808 70%);
+            border-bottom: 2px solid var(--border-color);
             text-align: center;
-            padding: 50px 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+            padding: 80px 20px;
+            position: relative;
         }
 
         header h1 {
             color: var(--gold-primary);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
             letter-spacing: 1px;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
         }
 
+        .badge-pill {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* Main Container */
         .container {
-            max-width: 1300px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1350px;
+            margin: 50px auto;
+            padding: 0 25px;
         }
 
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 span {
+            color: var(--gold-primary);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Filter Buttons */
         .filter-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 12px;
+            margin-bottom: 50px;
         }
 
         .filter-btn {
             background-color: var(--card-bg);
-            color: var(--gold-primary);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
+            color: var(--text-muted);
+            border: 1px solid #222;
+            padding: 10px 22px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -77,259 +187,427 @@
         .filter-btn:hover, .filter-btn.active {
             background-color: var(--gold-primary);
             color: #000000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
+        /* Grid & Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border: 1px solid #1f1f1f;
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--gold-primary);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+            background-color: var(--card-hover);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #1a1a1a;
+            overflow: hidden;
         }
 
         .card img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: contain;
-            background-color: #000;
-            padding: 10px;
-            border-bottom: 1px solid #222;
+            padding: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.03);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .card-content {
-            padding: 20px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-content h3 {
             color: var(--gold-light);
-            font-size: 1.3rem;
-            margin-bottom: 8px;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
         }
 
         .card-content p {
             color: var(--text-muted);
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #040404;
+        /* FAQ Section */
+        .faq-section {
+            max-width: 900px;
+            margin: 100px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid #1f1f1f;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-color);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question span {
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px 25px;
             color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #030303;
             border-top: 1px solid #1a1a1a;
-            margin-top: 60px;
+            padding: 50px 20px 30px 20px;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: #151515;
+            margin: 15px 0;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <span>⚡ Geni AI Global Hub</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Gallery</a></li>
+            <li><a href="pages/features.html">Features</a></li>
+            <li><a href="pages/wallet.html">Wallet & Store</a></li>
+            <li><a href="pages/support.html">Support</a></li>
+            <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+        <a href="pages/store.html" class="nav-cta">Get Credits</a>
+    </nav>
+
+    <!-- Header Hero Section -->
     <header>
+        <div class="badge-pill">Official App Showcase</div>
         <h1>Geni AI Global Hub</h1>
-        <p>Official Mobile App Features & Screens Gallery</p>
+        <p>Explore the complete mobile application interface, advanced AI studio modules, coin economy system, and user dashboard previews.</p>
     </header>
 
     <div class="container">
+
+        <div class="section-title">
+            <h2>Application <span>Screen Gallery</span></h2>
+            <p>Filter through all core operational modules, history logs, and profile screens of the app.</p>
+        </div>
+
         <!-- Categories Filter -->
         <div class="filter-container">
-            <button class="filter-btn active" onclick="filterGallery('all')">📂 All Folders</button>
-            <button class="filter-btn" onclick="filterGallery('ai')">🤖 AI Studio</button>
+            <button class="filter-btn active" onclick="filterGallery('all')">📂 All Screens (19)</button>
+            <button class="filter-btn" onclick="filterGallery('dashboard')">🏠 Dashboard & Core</button>
+            <button class="filter-btn" onclick="filterGallery('ai')">🤖 AI Studios</button>
             <button class="filter-btn" onclick="filterGallery('wallet')">💰 Wallet & Store</button>
             <button class="filter-btn" onclick="filterGallery('tools')">🛠️ Tools & History</button>
             <button class="filter-btn" onclick="filterGallery('profile')">👤 Profile & Safety</button>
         </div>
 
-        <!-- Gallery Grid -->
+        <!-- Gallery Grid (All 19 Screenshots) -->
         <div class="grid" id="galleryGrid">
 
-            <div class="card" data-category="profile">
-                <img src="images/home.jpg" alt="Home">
+            <!-- 1. Home / Dashboard -->
+            <div class="card" data-category="dashboard">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Dashboard</span>
+                    <img src="images/home.jpg" alt="Home Dashboard">
+                </div>
                 <div class="card-content">
                     <h3>Main Dashboard</h3>
-                    <p>Central screen showing AI features and live coin balances simultaneously.</p>
+                    <p>Central hub displaying active AI features, quick shortcuts, and live coin balances simultaneously.</p>
                 </div>
             </div>
 
+            <!-- 2. History -->
+            <div class="card" data-category="tools">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Tools</span>
+                    <img src="images/history.jpg" alt="General History">
+                </div>
+                <div class="card-content">
+                    <h3>General History Log</h3>
+                    <p>Comprehensive activity log tracking all previous user sessions, requests, and timestamps.</p>
+                </div>
+            </div>
+
+            <!-- 3. Image Editor DP -->
             <div class="card" data-category="ai">
-                <img src="images/image-generation.jpg" alt="Image Generation">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">AI Studio</span>
+                    <img src="images/image-editor-dp.jpg" alt="Image Editor DP">
+                </div>
+                <div class="card-content">
+                    <h3>Image Editor & DP Studio</h3>
+                    <p>Dedicated interface for tailoring, cropping, and generating profile display pictures with AI.</p>
+                </div>
+            </div>
+
+            <!-- 4. Image Generation -->
+            <div class="card" data-category="ai">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">AI Studio</span>
+                    <img src="images/image-generation.jpg" alt="Image Generation">
+                </div>
                 <div class="card-content">
                     <h3>AI Image Generation</h3>
-                    <p>Powerful studio module designed for generating stunning and creative images.</p>
+                    <p>Powerful text-to-image studio module designed for crafting stunning, creative visual artwork.</p>
                 </div>
             </div>
 
-            <div class="card" data-category="ai">
-                <img src="images/image-editor-dp.jpg" alt="Image Editor">
+            <!-- 5. Image History -->
+            <div class="card" data-category="tools">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">History</span>
+                    <img src="images/image-history.jpg" alt="Image History">
+                </div>
                 <div class="card-content">
-                    <h3>Image Editor & DP</h3>
-                    <p>Interface for editing, resizing, and tailoring pictures for profile displays.</p>
+                    <h3>Image History Archive</h3>
+                    <p>Organized gallery recording all previously generated images with instant download options.</p>
                 </div>
             </div>
 
-            <div class="card" data-category="ai">
-                <img src="images/video-ai.jpg" alt="Video AI">
-                <div class="card-content">
-                    <h3>Video AI Studio</h3>
-                    <p>Advanced cutting-edge module to generate and manage AI videos seamlessly.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="ai">
-                <img src="images/voice-ai.jpg" alt="Voice AI">
-                <div class="card-content">
-                    <h3>Voice AI Module</h3>
-                    <p>Stunning interface for voice cloning, synthesis, and audio processing.</p>
-                </div>
-            </div>
-
+            <!-- 6. Invite / Referral -->
             <div class="card" data-category="wallet">
-                <img src="images/wallet-rewards-menu.jpg" alt="Wallet">
-                <div class="card-content">
-                    <h3>Wallet & Rewards Menu</h3>
-                    <p>Complete financial hub managing coin balance, daily check-ins, and referrals.</p>
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Wallet</span>
+                    <img src="images/invite.jpg" alt="Invite Referral">
                 </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/watch-ad-reward.jpg" alt="Ad Reward">
-                <div class="card-content">
-                    <h3>Ad Reward System</h3>
-                    <p>Earn free currency instantly by watching rewarded video advertisements.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/store.jpg" alt="Store">
-                <div class="card-content">
-                    <h3>Credit Store (Package 1)</h3>
-                    <p>Store interface to purchase affordable gold and silver coin packages.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/store 1.jpg" alt="Store 1">
-                <div class="card-content">
-                    <h3>Credit Store (Package 2)</h3>
-                    <p>Detailed listing of additional credit offers and bundle pricing.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="wallet">
-                <img src="images/invite.jpg" alt="Invite">
                 <div class="card-content">
                     <h3>Referral Invite System</h3>
-                    <p>Invite friends via QR code sharing to earn bonus coins together.</p>
+                    <p>Invite friends using unique QR codes and referral links to earn shared bonus gold coins.</p>
                 </div>
             </div>
 
-            <div class="card" data-category="tools">
-                <img src="images/audio-tools.jpg" alt="Audio Tools">
-                <div class="card-content">
-                    <h3>Audio Tools</h3>
-                    <p>Modern utilities supporting microphone recording and high-quality audio playback.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/voice-library.jpg" alt="Voice Library">
-                <div class="card-content">
-                    <h3>Voice Library</h3>
-                    <p>Organized repository storing saved voice clips, audio samples, and outputs.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/history.jpg" alt="History">
-                <div class="card-content">
-                    <h3>General History</h3>
-                    <p>Comprehensive activity log tracking all previous user sessions and events.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/image-history.jpg" alt="Image History">
-                <div class="card-content">
-                    <h3>Image History</h3>
-                    <p>Dedicated gallery archiving previously generated images and artwork.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/video-history.jpg" alt="Video History">
-                <div class="card-content">
-                    <h3>Video History</h3>
-                    <p>Playback panel and record log of all previously created AI videos.</p>
-                </div>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="images/voice-history.jpg" alt="Voice History">
-                <div class="card-content">
-                    <h3>Voice History</h3>
-                    <p>Detailed breakdown and logs of previous voice generations and tasks.</p>
-                </div>
-            </div>
-
+            <!-- 7. Profile -->
             <div class="card" data-category="profile">
-                <img src="images/profile.jpg" alt="Profile">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Profile</span>
+                    <img src="images/profile.jpg" alt="User Profile">
+                </div>
                 <div class="card-content">
-                    <h3>User Profile</h3>
-                    <p>Account settings, user identification, and personal preference controls.</p>
+                    <h3>User Profile & Account</h3>
+                    <p>Account settings, user identification, membership tiers, and preference controls.</p>
                 </div>
             </div>
 
-            <div class="card" data-category="profile">
-                <img src="images/account-safety.jpg" alt="Safety">
+            <!-- 8. Store 1 (Package 1) -->
+            <div class="card" data-category="wallet">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Store</span>
+                    <img src="images/store 1.jpg" alt="Credit Store Package 1">
+                </div>
                 <div class="card-content">
-                    <h3>Account Safety</h3>
-                    <p>Security guidelines, policy warnings, and account protection hub.</p>
+                    <h3>Credit Store (Option A)</h3>
+                    <p>Detailed listing of premium gold and silver coin bundles designed for heavy creators.</p>
                 </div>
             </div>
 
-            <div class="card" data-category="profile">
-                <img src="images/ai-error.jpg" alt="Error Handling">
+            <!-- 9. Store (Package 2) -->
+            <div class="card" data-category="wallet">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">Store</span>
+                    <img src="images/store.jpg" alt="Credit Store Package 2">
+                </div>
                 <div class="card-content">
-                    <h3>System Alert / Notice</h3>
-                    <p>Guidance screen helping users handle network connection or server errors.</p>
+                    <h3>Credit Store (Option B)</h3>
+                    <p>Store interface allowing secure checkout and instant balance top-ups for uninterrupted AI use.</p>
+                </div>
+            </div>
+
+            <!-- 10. Video AI -->
+            <div class="card" data-category="ai">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">AI Studio</span>
+                    <img src="images/video-ai.jpg" alt="Video AI Studio">
+                </div>
+                <div class="card-content">
+                    <h3>Video AI Studio</h3>
+                    <p>Cutting-edge module to generate dynamic, high-definition AI videos from text prompts.</p>
+                </div>
+            </div>
+
+            <!-- 11. Video History -->
+            <div class="card" data-category="tools">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">History</span>
+                    <img src="images/video-history.jpg" alt="Video History">
+                </div>
+                <div class="card-content">
+                    <h3>Video History Log</h3>
+                    <p>Playback panel and record archive tracking all previously rendered AI video outputs.</p>
+                </div>
+            </div>
+
+            <!-- 12. Voice AI -->
+            <div class="card" data-category="ai">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">AI Studio</span>
+                    <img src="images/voice-ai.jpg" alt="Voice AI Module">
+                </div>
+                <div class="card-content">
+                    <h3>Voice AI & Cloning</h3>
+                    <p>Advanced voice synthesis module for realistic voice cloning, TTS, and audio conversion.</p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
-    </footer>
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <div class="section-title">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Everything you need to know about Geni AI Global Hub and its features.</p>
+        </div>
 
-    <script>
-        function filterGallery(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What is Geni AI Global Hub? <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Geni AI Global Hub is an all-in-one advanced mobile AI platform built with Flutter, offering state-of-the-art AI image generation, video creation, voice cloning, and audio tools with a built-in coin reward economy.
+                </div>
+            </div>
 
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-</body>
-</html>
+            <div class="faq-item">
+                <div class
