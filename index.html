@@ -47,23 +47,6 @@
             text-decoration: none;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--gold-primary);
-        }
-
         header {
             background: radial-gradient(circle at center, #1a1600 0%, #080808 70%);
             border-bottom: 2px solid var(--border-color);
@@ -128,6 +111,7 @@
             transition: transform 0.3s, border-color 0.3s;
             display: flex;
             flex-direction: column;
+            text-decoration: none;
         }
 
         .card:hover {
@@ -173,14 +157,7 @@
 <body>
 
     <nav>
-        <a href="index.html" class="nav-logo">⚡ Geni AI Hub</a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Gallery</a></li>
-            <li><a href="pages/features.html">Features</a></li>
-            <li><a href="pages/wallet.html">Wallet</a></li>
-            <li><a href="pages/support.html">Support</a></li>
-            <li><a href="pages/delete-account.html">Delete Account</a></li>
-        </ul>
+        <a href="index.html" class="nav-logo">⚡ Geni AI Global Hub</a>
     </nav>
 
     <header>
@@ -198,157 +175,157 @@
         </div>
 
         <div class="grid" id="galleryGrid">
-            <div class="card" data-category="profile">
+            <a href="images/home.jpg" target="_blank" class="card" data-category="profile">
                 <img src="images/home.jpg" alt="Home">
                 <div class="card-content">
                     <h3>Main Dashboard</h3>
                     <p>Central screen showing AI features and live coin balances simultaneously.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="ai">
+            <a href="images/image-generation.jpg" target="_blank" class="card" data-category="ai">
                 <img src="images/image-generation.jpg" alt="Image Generation">
                 <div class="card-content">
                     <h3>AI Image Generation</h3>
                     <p>Powerful studio module designed for generating stunning and creative images.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="ai">
+            <a href="images/image-editor-dp.jpg" target="_blank" class="card" data-category="ai">
                 <img src="images/image-editor-dp.jpg" alt="Image Editor">
                 <div class="card-content">
                     <h3>Image Editor & DP</h3>
                     <p>Interface for editing, resizing, and tailoring pictures for profile displays.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="ai">
+            <a href="images/video-ai.jpg" target="_blank" class="card" data-category="ai">
                 <img src="images/video-ai.jpg" alt="Video AI">
                 <div class="card-content">
                     <h3>Video AI Studio</h3>
                     <p>Advanced cutting-edge module to generate and manage AI videos seamlessly.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="ai">
+            <a href="images/voice-ai.jpg" target="_blank" class="card" data-category="ai">
                 <img src="images/voice-ai.jpg" alt="Voice AI">
                 <div class="card-content">
                     <h3>Voice AI Module</h3>
                     <p>Stunning interface for voice cloning, synthesis, and audio processing.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="wallet">
+            <a href="images/wallet-rewards-menu.jpg" target="_blank" class="card" data-category="wallet">
                 <img src="images/wallet-rewards-menu.jpg" alt="Wallet">
                 <div class="card-content">
                     <h3>Wallet & Rewards Menu</h3>
                     <p>Complete financial hub managing coin balance, daily check-ins, and referrals.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="wallet">
+            <a href="images/watch-ad-reward.jpg" target="_blank" class="card" data-category="wallet">
                 <img src="images/watch-ad-reward.jpg" alt="Ad Reward">
                 <div class="card-content">
                     <h3>Ad Reward System</h3>
                     <p>Earn free currency instantly by watching rewarded video advertisements.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="wallet">
+            <a href="images/store.jpg" target="_blank" class="card" data-category="wallet">
                 <img src="images/store.jpg" alt="Store">
                 <div class="card-content">
                     <h3>Credit Store (Package 1)</h3>
                     <p>Store interface to purchase affordable gold and silver coin packages.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="wallet">
+            <a href="images/store 1.jpg" target="_blank" class="card" data-category="wallet">
                 <img src="images/store 1.jpg" alt="Store 1">
                 <div class="card-content">
                     <h3>Credit Store (Package 2)</h3>
                     <p>Detailed listing of additional credit offers and bundle pricing.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="wallet">
+            <a href="images/invite.jpg" target="_blank" class="card" data-category="wallet">
                 <img src="images/invite.jpg" alt="Invite">
                 <div class="card-content">
                     <h3>Referral Invite System</h3>
                     <p>Invite friends via QR code sharing to earn bonus coins together.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/audio-tools.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/audio-tools.jpg" alt="Audio Tools">
                 <div class="card-content">
                     <h3>Audio Tools</h3>
                     <p>Modern utilities supporting microphone recording and high-quality audio playback.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/voice-library.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/voice-library.jpg" alt="Voice Library">
                 <div class="card-content">
                     <h3>Voice Library</h3>
                     <p>Organized repository storing saved voice clips, audio samples, and outputs.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/history.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/history.jpg" alt="History">
                 <div class="card-content">
                     <h3>General History</h3>
                     <p>Comprehensive activity log tracking all previous user sessions and events.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/image-history.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/image-history.jpg" alt="Image History">
                 <div class="card-content">
                     <h3>Image History</h3>
                     <p>Dedicated gallery archiving previously generated images and artwork.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/video-history.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/video-history.jpg" alt="Video History">
                 <div class="card-content">
                     <h3>Video History</h3>
                     <p>Playback panel and record log of all previously created AI videos.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="tools">
+            <a href="images/voice-history.jpg" target="_blank" class="card" data-category="tools">
                 <img src="images/voice-history.jpg" alt="Voice History">
                 <div class="card-content">
                     <h3>Voice History</h3>
                     <p>Detailed breakdown and logs of previous voice generations and tasks.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="profile">
+            <a href="images/profile.jpg" target="_blank" class="card" data-category="profile">
                 <img src="images/profile.jpg" alt="Profile">
                 <div class="card-content">
                     <h3>User Profile</h3>
                     <p>Account settings, user identification, and personal preference controls.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="profile">
+            <a href="images/account-safety.jpg" target="_blank" class="card" data-category="profile">
                 <img src="images/account-safety.jpg" alt="Safety">
                 <div class="card-content">
                     <h3>Account Safety</h3>
                     <p>Security guidelines, policy warnings, and account protection hub.</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card" data-category="profile">
+            <a href="images/ai-error.jpg" target="_blank" class="card" data-category="profile">
                 <img src="images/ai-error.jpg" alt="Error Handling">
                 <div class="card-content">
                     <h3>System Alert / Notice</h3>
                     <p>Guidance screen helping users handle network connection or server errors.</p>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 
