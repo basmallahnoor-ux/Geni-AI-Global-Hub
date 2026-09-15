@@ -13,7 +13,6 @@
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --border-color: #332d00;
-            --whatsapp-green: #25d366;
         }
 
         * {
@@ -29,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* Top Website Global Navigation Bar (Adjusted paths for subfolder) */
+        /* Top Navigation Bar */
         .site-nav {
             background-color: #000000;
             border-bottom: 1px solid var(--border-color);
@@ -126,7 +125,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -139,20 +138,22 @@
             margin-bottom: 30px;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            justify-content: space-between;
         }
 
+        /* Small Corner Thumbnail */
         .feature-block img {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            object-fit: contain;
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
             background-color: #000;
-            border: 1px solid #222;
+            border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 10px;
+            padding: 4px;
+            flex-shrink: 0;
         }
 
         .feature-info {
@@ -162,15 +163,15 @@
 
         .feature-info h2 {
             color: var(--gold-light);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
         }
 
         .feature-info p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 15px;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .tag {
@@ -178,10 +179,29 @@
             background-color: rgba(255, 215, 0, 0.1);
             color: var(--gold-primary);
             border: 1px solid var(--border-color);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background: transparent;
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            padding: 7px 16px;
+            border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-action:hover {
+            background: var(--gold-primary);
+            color: #000;
         }
 
         footer {
@@ -210,11 +230,21 @@
         .footer-links a:hover {
             color: var(--gold-primary);
         }
+
+        @media(max-width: 600px) {
+            .feature-block {
+                flex-direction: column;
+                text-align: center;
+            }
+            .feature-block img {
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Website Global Navigation (Updated relative links for subfolder) -->
+    <!-- Top Navigation Bar -->
     <nav class="site-nav">
         <a href="../index.html" class="site-logo">⚡ GENI AI HUB</a>
         <ul class="nav-links">
@@ -242,54 +272,70 @@
 
     <div class="container">
 
-        <!-- Feature 1 -->
+        <!-- Feature 1: Image Generation -->
         <div class="feature-block">
-            <img src="../images/image-generation.jpg" alt="AI Image Generation">
             <div class="feature-info">
                 <span class="tag">AI Studio</span>
                 <h2>AI Image Generation</h2>
-                <p>Generate stunning, high-resolution visual artwork using advanced text-to-image AI prompts. Tailor artistic styles, aspect ratios, and bring your creative imagination to life instantly.</p>
+                <p>Generate stunning, high-resolution visual artwork using advanced text-to-image prompts. Tailor unique artistic styles, select precise aspect ratios, and bring your imagination to life instantly with powerful AI models.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
             </div>
+            <img src="../images/image-generation.jpg" alt="AI Image Generation">
         </div>
 
-        <!-- Feature 2 -->
+        <!-- Feature 2: Image Editor & DP -->
         <div class="feature-block">
-            <img src="../images/image-editor-dp.jpg" alt="Image Editor">
             <div class="feature-info">
                 <span class="tag">Image Tools</span>
                 <h2>Image Editor & DP Studio</h2>
-                <p>An intuitive interface designed for editing, cropping, filtering, and optimizing pictures tailored precisely for profile displays and social sharing.</p>
+                <p>An intuitive editing interface designed for cropping, filtering, enhancing, and optimizing pictures precisely tailored for profile displays, avatars, and social media sharing.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
             </div>
+            <img src="../images/image-editor-dp.jpg" alt="Image Editor">
         </div>
 
-        <!-- Feature 3 -->
+        <!-- Feature 3: Video AI (4-6 seconds) -->
         <div class="feature-block">
-            <img src="../images/video-ai.jpg" alt="Video AI">
             <div class="feature-info">
                 <span class="tag">AI Studio</span>
-                <h2>Video AI Generation</h2>
-                <p>An advanced cutting-edge module allowing users to convert static concepts and text prompts into dynamic, short-form AI motion videos seamlessly.</p>
+                <h2>Video AI Generation (Text & Image to Video)</h2>
+                <p>An advanced cutting-edge module supporting both <strong>Text-to-Video</strong> and <strong>Image-to-Video</strong> generation. Create dynamic, cinematic short-form AI motion videos lasting between <strong>4 to 6 seconds</strong> seamlessly.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
             </div>
+            <img src="../images/video-ai.jpg" alt="Video AI">
         </div>
 
-        <!-- Feature 4 -->
+        <!-- Feature 4: Voice AI & Model Training (TTS only) -->
         <div class="feature-block">
-            <img src="../images/voice-ai.jpg" alt="Voice AI">
             <div class="feature-info">
                 <span class="tag">Audio Processing</span>
-                <h2>Voice AI & Cloning</h2>
-                <p>A professional audio studio interface supporting voice synthesis, audio cloning parameters, and speech processing tools with high-fidelity output.</p>
+                <h2>Voice AI, TTS & Model Training</h2>
+                <p>A specialized audio studio focused on high-fidelity <strong>Text-to-Speech (TTS)</strong> synthesis alongside dedicated <strong>Model Training</strong> options to configure custom voice personas and speech parameters efficiently.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
             </div>
+            <img src="../images/voice-ai.jpg" alt="Voice AI">
         </div>
 
-        <!-- Feature 5 -->
+        <!-- Feature 5: Train Model Screen -->
         <div class="feature-block">
-            <img src="../images/audio-tools.jpg" alt="Audio Tools">
+            <div class="feature-info">
+                <span class="tag">AI Studio</span>
+                <h2>Custom Model Training Studio</h2>
+                <p>Train your own custom models directly inside the app workspace. Configure training parameters, upload base datasets, and manage your trained assets effortlessly with built-in status monitoring.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
+            </div>
+            <img src="../images/trainmodel.jpg" alt="Train Model">
+        </div>
+
+        <!-- Feature 6: Audio Tools & Recording -->
+        <div class="feature-block">
             <div class="feature-info">
                 <span class="tag">Utilities</span>
                 <h2>Microphone Recording & Audio Tools</h2>
-                <p>Built-in utilities supporting seamless microphone recording, audio file management, and instant playback features for voice generation workflows.</p>
+                <p>Built-in handy utilities supporting seamless microphone voice recording, audio file management, track playback, and history logs designed for quick voice generation workflows.</p>
+                <a href="wallet.html" class="btn-action">More Information</a>
             </div>
+            <img src="../images/audio-tools.jpg" alt="Audio Tools">
         </div>
 
     </div>
