@@ -31,7 +31,7 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 18px}
 .section-title p{color:var(--muted)}
 
 .info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.info-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;display:flex;flex-direction:column;justify-content:space-between}
 .info-card h3{color:var(--light);margin-bottom:7px;font-size:1.05rem}
 .info-card p{color:var(--muted);font-size:.88rem;margin-bottom:12px}
 
@@ -115,48 +115,60 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 
 <div class="info-grid">
 
+<!-- Card 1: AI Features -->
 <div class="info-card">
-<h3>🤖 AI Features</h3>
-<p>Explore image, video, voice and other AI creative tools.</p>
-<div class="card-thumbs">
-<img src="images/image-generation.jpg" alt="AI Image Generation" onclick="openLightboxFromThumb(this)">
-<img src="images/video-ai.jpg" alt="Video AI Studio" onclick="openLightboxFromThumb(this)">
-<img src="images/voice-ai.jpg" alt="Voice AI Module" onclick="openLightboxFromThumb(this)">
-<img src="images/image-editor-dp.jpg" alt="Image Editor" onclick="openLightboxFromThumb(this)">
-</div>
-<a class="btn" href="pages/features.html">More</a>
+  <div>
+    <h3>🤖 AI Features</h3>
+    <p>Explore image, video, voice and other AI creative tools.</p>
+    <a class="btn" href="pages/features.html">More Information</a>
+  </div>
+  <div class="card-thumbs">
+    <img src="images/image-generation.jpg" alt="AI Image Generation" onclick="openLightboxFromThumb(this)">
+    <img src="images/video-ai.jpg" alt="Video AI Studio" onclick="openLightboxFromThumb(this)">
+    <img src="images/voice-ai.jpg" alt="Voice AI Module" onclick="openLightboxFromThumb(this)">
+    <img src="images/image-editor-dp.jpg" alt="Image Editor" onclick="openLightboxFromThumb(this)">
+  </div>
 </div>
 
+<!-- Card 2: Wallet & Store -->
 <div class="info-card">
-<h3>💰 Wallet & Store</h3>
-<p>Learn about rewards, credits, purchases and referrals.</p>
-<div class="card-thumbs">
-<img src="images/wallet-rewards-menu.jpg" alt="Wallet & Rewards" onclick="openLightboxFromThumb(this)">
-<img src="images/watch-ad-reward.jpg" alt="Ad Reward" onclick="openLightboxFromThumb(this)">
-<img src="images/store.jpg" alt="Credit Store" onclick="openLightboxFromThumb(this)">
-<img src="images/invite.jpg" alt="Referral Invite" onclick="openLightboxFromThumb(this)">
-</div>
-<a class="btn" href="pages/wallet.html">More</a>
+  <div>
+    <h3>💰 Wallet & Store</h3>
+    <p>Learn about rewards, credits, purchases and referrals.</p>
+    <a class="btn" href="pages/wallet.html">More Information</a>
+  </div>
+  <div class="card-thumbs">
+    <img src="images/wallet-rewards-menu.jpg" alt="Wallet & Rewards" onclick="openLightboxFromThumb(this)">
+    <img src="images/watch-ad-reward.jpg" alt="Ad Reward" onclick="openLightboxFromThumb(this)">
+    <img src="images/store.jpg" alt="Credit Store" onclick="openLightboxFromThumb(this)">
+    <img src="images/invite.jpg" alt="Referral Invite" onclick="openLightboxFromThumb(this)">
+  </div>
 </div>
 
+<!-- Card 3: Account & Safety -->
 <div class="info-card">
-<h3>🛡️ Account & Safety</h3>
-<p>Account security and important account controls.</p>
-<div class="card-thumbs">
-<img src="images/profile.jpg" alt="User Profile" onclick="openLightboxFromThumb(this)">
-<img src="images/account-safety.jpg" alt="Account Safety" onclick="openLightboxFromThumb(this)">
-<img src="images/ai-error.jpg" alt="System Alert" onclick="openLightboxFromThumb(this)">
-</div>
-<a class="btn" href="pages/account-safety.html">More</a>
+  <div>
+    <h3>🛡️ Account & Safety</h3>
+    <p>Account security and important account controls.</p>
+    <a class="btn" href="pages/account-safety.html">More Information</a>
+  </div>
+  <div class="card-thumbs">
+    <img src="images/profile.jpg" alt="User Profile" onclick="openLightboxFromThumb(this)">
+    <img src="images/account-safety.jpg" alt="Account Safety" onclick="openLightboxFromThumb(this)">
+    <img src="images/ai-error.jpg" alt="System Alert" onclick="openLightboxFromThumb(this)">
+  </div>
 </div>
 
+<!-- Card 4: Support -->
 <div class="info-card">
-<h3>💬 Support</h3>
-<p>Get help through the official Geni AI support channels.</p>
-<div class="card-thumbs">
-<img src="images/home.jpg" alt="Main Dashboard" onclick="openLightboxFromThumb(this)">
-</div>
-<a class="btn" href="pages/support.html">More</a>
+  <div>
+    <h3>💬 Support</h3>
+    <p>Get help through the official Geni AI support channels.</p>
+    <a class="btn" href="pages/support.html">More Information</a>
+  </div>
+  <div class="card-thumbs">
+    <img src="images/home.jpg" alt="Main Dashboard" onclick="openLightboxFromThumb(this)">
+  </div>
 </div>
 
 </div>
