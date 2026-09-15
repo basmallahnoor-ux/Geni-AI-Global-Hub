@@ -34,16 +34,19 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 0}
 .btn{display:inline-block;padding:7px 16px;border:1px solid var(--gold);border-radius:8px;color:var(--gold);font-weight:600;font-size:.85rem;background:transparent;cursor:pointer;transition:.2s}
 .btn:hover{background:var(--gold);color:#000}
 
-/* Hidden More Info Content Box */
-.more-details{display:none;margin-top:14px;padding:14px;background:#1a1a1a;border-left:3px solid var(--gold);border-radius:6px;color:#ccc;font-size:0.88rem;line-height:1.6}
+/* Hidden More Info Content Box with Rich Formatting */
+.more-details{display:none;margin-top:14px;padding:16px;background:#1a1a1a;border-left:3px solid var(--gold);border-radius:6px;color:#ccc;font-size:0.88rem;line-height:1.7}
 .more-details.active{display:block}
+.more-details h4{color:var(--light);margin:10px 0 6px;font-size:0.95rem}
+.more-details ul{margin-left:18px;margin-bottom:10px}
+.more-details li{margin-bottom:4px}
 
 /* Strictly controlled small thumbnail sizing */
 .card-thumbs{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0;max-width:140px;justify-content:flex-end}
 .card-thumbs img{width:52px !important;height:52px !important;min-width:52px;min-height:52px;max-width:52px;max-height:52px;object-fit:cover;border-radius:8px;border:1px solid #333;cursor:pointer;background:#000;transition:.2s}
 .card-thumbs img:hover{border-color:var(--gold);transform:scale(1.08)}
 
-/* Lightbox Modal (Only opens when thumbnail image is clicked) */
+/* Lightbox Modal */
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;justify-content:center;align-items:center;padding:20px}
 .lightbox.active{display:flex}
 .lightbox-content{position:relative;max-width:95vw;max-height:90vh;text-align:center}
@@ -81,7 +84,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 
 <header>
 <h1>AI Studio & Features</h1>
-<p>Explore the powerful creative modules built inside Geni AI Global Hub.</p>
+<p>Explore the powerful creative modules and professional editing tools built inside Geni AI Global Hub.</p>
 </header>
 
 <div class="container">
@@ -91,10 +94,17 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">AI Studio</span>
     <h2>AI Image Generation</h2>
-    <p>Generate stunning, high-resolution visual artwork using advanced text-to-image prompts. Tailor unique artistic styles and aspect ratios.</p>
+    <p>Transform your imaginative concepts into high-resolution visual artwork. Create stunning designs using advanced text-to-image prompts with customizable styles and aspect ratios.</p>
     <button class="btn" onclick="toggleDetails('details-1', this)">More Information</button>
     <div id="details-1" class="more-details">
-      <p>Create AI-generated images from text prompts with different creative styles and aspect ratios. Turn your ideas into unique visual artwork directly inside Geni AI.</p>
+      <p>Geni AI's Image Generation module allows you to bring your ideas to life instantly. Here is how you can get the best results:</p>
+      <h4>💡 Pro Tips for Best Prompts:</h4>
+      <ul>
+        <li><strong>Be Descriptive:</strong> Clearly mention subjects, lighting, colors, and background details.</li>
+        <li><strong>Choose Correct Aspect Ratios:</strong> Select portrait, landscape, or square layouts based on where you want to share your art.</li>
+        <li><strong>Artistic Styles:</strong> Experiment with different styles like digital painting, photorealistic, cinematic, or anime.</li>
+      </ul>
+      <p>The clearer and more detailed your prompt is, the more breathtaking and accurate your generated image will be!</p>
     </div>
   </div>
   <div class="card-thumbs">
@@ -107,14 +117,22 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">Image Tools</span>
     <h2>Image Editor & DP Studio</h2>
-    <p>An intuitive editing interface designed for cropping, filtering, enhancing, and optimizing pictures tailored for profiles and social sharing.</p>
+    <p>A comprehensive, professional-grade editing suite built directly into the app. Perfectly tailored for optimizing profile pictures, social posts, and custom graphical edits.</p>
     <button class="btn" onclick="toggleDetails('details-2', this)">More Information</button>
     <div id="details-2" class="more-details">
-      <p>Edit and prepare your images for profile pictures and other uses. Crop, adjust and customize your image with the built-in editing tools.</p>
+      <p>Our built-in Image Editor offers multiple advanced editing instruments to give your pictures a flawless look without needing external software:</p>
+      <h4>🛠️ Key Editing Tools Included:</h4>
+      <ul>
+        <li><strong>Aspect Ratio:</strong> Resize and adapt your images seamlessly for any social media platform.</li>
+        <li><strong>Design & Shape:</strong> Apply unique creative shapes and border frames to your pictures.</li>
+        <li><strong>Collage:</strong> Combine multiple photos into a single structured, beautiful layout.</li>
+        <li><strong>Text & Style:</strong> Add custom typography, captions, and stylish text overlays.</li>
+        <li><strong>Crop & Rotate:</strong> Quickly fix angles, trim unnecessary areas, and perfect your framing.</li>
+      </ul>
     </div>
   </div>
   <div class="card-thumbs">
-    <img src="../images/image-editor-dp.jpg" alt="Image Editor & DP" onclick="openLightbox(this)">
+    <img src="../images/image-editor-dp.jpg" alt="Image Editor & DP Studio" onclick="openLightbox(this)">
   </div>
 </div>
 
@@ -123,10 +141,16 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">AI Studio</span>
     <h2>Video AI Generation</h2>
-    <p>Advanced module supporting text-to-video and image-to-video generation to create dynamic short-form AI motion video content.</p>
+    <p>Unlock cutting-edge motion creation with text-to-video and image-to-video conversion capabilities to produce dynamic, short-form AI video clips.</p>
     <button class="btn" onclick="toggleDetails('details-3', this)">More Information</button>
     <div id="details-3" class="more-details">
-      <p>Generate short AI videos using text-to-video or image-to-video generation. Turn a written idea or an existing image into dynamic video content.</p>
+      <p>Bring static ideas or images into motion using state-of-the-art AI video generation models:</p>
+      <h4>🎬 Features & Guidance:</h4>
+      <ul>
+        <li><strong>Text-to-Video:</strong> Type a cinematic scene description and watch AI render it into motion.</li>
+        <li><strong>Image-to-Video:</strong> Upload an existing artwork or photo and animate it dynamically.</li>
+        <li><strong>Best Results:</strong> Keep movement descriptions smooth and focused for clean, professional video renders.</li>
+      </ul>
     </div>
   </div>
   <div class="card-thumbs">
@@ -139,10 +163,15 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">Audio Processing</span>
     <h2>Voice AI & Model Training</h2>
-    <p>Specialized audio studio focused on high-fidelity Text-to-Speech (TTS) synthesis and custom voice model training capabilities.</p>
+    <p>Advanced audio laboratory designed for hyper-realistic Text-to-Speech (TTS) synthesis and custom voice model training for personalized audio projects.</p>
     <button class="btn" onclick="toggleDetails('details-4', this)">More Information</button>
     <div id="details-4" class="more-details">
-      <p>Convert text into AI-generated speech using the Voice AI tools. Geni AI also provides model-training functionality for creating and working with custom voice models.</p>
+      <p>Explore high-fidelity voice cloning and speech generation capabilities:</p>
+      <h4>🎙️ Studio Highlights:</h4>
+      <ul>
+        <li><strong>Text-to-Speech:</strong> Convert written scripts into natural-sounding human voices.</li>
+        <li><strong>Custom Model Training:</strong> Train and manage unique voice models tailored to your specific project needs.</li>
+      </ul>
     </div>
   </div>
   <div class="card-thumbs">
@@ -156,14 +185,18 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">Audio Tools</span>
     <h2>Combine Audio</h2>
-    <p>Merge and combine multiple audio files into a single unified track for easier organization and seamless playback.</p>
+    <p>Effortlessly merge, splice, and combine multiple audio tracks into a single unified file for smooth playback and seamless project organization.</p>
     <button class="btn" onclick="toggleDetails('details-5', this)">More Information</button>
     <div id="details-5" class="more-details">
-      <p>Combine multiple audio files into a single audio track. This makes it easier to organize and use several audio clips together.</p>
+      <p>Manage your sound clips efficiently with the Combine Audio tool:</p>
+      <ul>
+        <li>Merge voiceovers, background music, or multiple audio segments together.</li>
+        <li>Clean interface designed for quick and accurate audio stitching.</li>
+      </ul>
     </div>
   </div>
   <div class="card-thumbs">
-    <img src="../images/combine-audio.jpg" alt="Combine Audio" onclick="openLightbox(this)">
+    <img src="../images/audio-tools.jpg" alt="Combine Audio" onclick="openLightbox(this)">
   </div>
 </div>
 
@@ -172,20 +205,20 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">Media Converters</span>
     <h2>Audio to Video</h2>
-    <p>Transform your standalone audio tracks into video formats to create engaging, shareable visual content easily.</p>
+    <p>Convert standalone audio recordings into shareable video formats complete with visual backdrops for social platforms and video sharing.</p>
     <button class="btn" onclick="toggleDetails('details-6', this)">More Information</button>
     <div id="details-6" class="more-details">
-      <p>Convert audio into a video format and create visual video content from your audio. This provides an easy way to turn an audio track into shareable video content.</p>
+      <p>Turn your podcasts, voice notes, or music tracks into ready-to-upload video content instantly with our conversion module.</p>
     </div>
   </div>
   <div class="card-thumbs">
-    <img src="../images/audio-to-video.jpg" alt="Audio to Video" onclick="openLightbox(this)">
+    <img src="../images/audio-tools.jpg" alt="Audio to Video" onclick="openLightbox(this)">
   </div>
 </div>
 
 </div>
 
-<!-- Lightbox Modal (Only for thumbnails) -->
+<!-- Lightbox Modal -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
@@ -199,6 +232,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 <a href="../index.html">Home</a>
 <a href="features.html">Features</a>
 <a href="wallet.html">Wallet</a>
+<a href="account-safety.html">Account & Safety</a>
 <a href="privacy-policy.html">Privacy</a>
 <a href="terms.html">Terms</a>
 <a href="delete-account.html">Delete Account</a>
