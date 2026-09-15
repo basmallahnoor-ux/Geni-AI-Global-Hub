@@ -141,15 +141,15 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="feature-info">
     <span class="tag">AI Studio</span>
     <h2>Video AI Generation</h2>
-    <p>Unlock cutting-edge motion creation with text-to-video and image-to-video conversion capabilities to produce dynamic, short-form AI video clips.</p>
+    <p>Unlock cutting-edge motion creation with text-to-video, image-to-video, and optional audio attachment capabilities to produce dynamic AI video clips.</p>
     <button class="btn" onclick="toggleDetails('details-3', this)">More Information</button>
     <div id="details-3" class="more-details">
-      <p>Bring static ideas or images into motion using state-of-the-art AI video generation models:</p>
-      <h4>🎬 Features & Guidance:</h4>
+      <p>Bring static ideas, images, and audio tracks into motion using state-of-the-art AI video generation models:</p>
+      <h4>🎬 Features & Audio Integration:</h4>
       <ul>
         <li><strong>Text-to-Video:</strong> Type a cinematic scene description and watch AI render it into motion.</li>
-        <li><strong>Image-to-Video:</strong> Upload an existing artwork or photo and animate it dynamically.</li>
-        <li><strong>Best Results:</strong> Keep movement descriptions smooth and focused for clean, professional video renders.</li>
+        <li><strong>Image-to-Video:</strong> Upload an existing photo or artwork to animate it dynamically.</li>
+        <li><strong>Optional Audio Attachment:</strong> Seamlessly attach your own audio files (&lt;10MB) alongside your image to synchronize custom voiceovers or background music with your video output.</li>
       </ul>
     </div>
   </div>
@@ -221,7 +221,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 </div>
 
 <!-- Lightbox Modal -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+<div class="lightbox" id="lightbox" onclick="openLightbox(event)">
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
     <img id="lightbox-img" src="" alt="">
@@ -279,4 +279,4 @@ document.addEventListener('keydown', e => {
 </script>
 
 </body>
-</html> 
+</html>
