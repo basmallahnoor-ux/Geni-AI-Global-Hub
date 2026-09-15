@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,21 +140,9 @@
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
-            align-items: center;
+            align-items: flex-start;
             box-shadow: 0 5px 15px rgba(0,0,0,0.6);
             justify-content: space-between;
-        }
-
-        /* Small Corner Thumbnail */
-        .feature-block img {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            background-color: #000;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 4px;
-            flex-shrink: 0;
         }
 
         .feature-info {
@@ -186,6 +175,32 @@
             margin-bottom: 8px;
         }
 
+        /* Small Corner Thumbnail matching Index style */
+        .card-thumbs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+            max-width: 140px;
+            justify-content: flex-end;
+        }
+
+        .card-thumbs img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #333;
+            cursor: pointer;
+            background: #000;
+            transition: .2s;
+        }
+
+        .card-thumbs img:hover {
+            border-color: var(--gold-primary);
+            transform: scale(1.08);
+        }
+
         .btn-action {
             display: inline-block;
             background: transparent;
@@ -197,11 +212,66 @@
             font-weight: 600;
             text-decoration: none;
             transition: 0.2s;
+            margin-top: 5px;
         }
 
         .btn-action:hover {
             background: var(--gold-primary);
             color: #000;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.92);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 95vw;
+            max-height: 90vh;
+            text-align: center;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 82vh;
+            border-radius: 10px;
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 0 30px rgba(255,215,0,.25);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -42px;
+            right: 0;
+            background: var(--gold-primary);
+            color: #000;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-close:hover {
+            background: #fff;
+        }
+        .lightbox-caption {
+            color: var(--gold-light);
+            margin-top: 12px;
+            font-size: 1rem;
         }
 
         footer {
@@ -234,10 +304,10 @@
         @media(max-width: 600px) {
             .feature-block {
                 flex-direction: column;
-                text-align: center;
             }
-            .feature-block img {
-                margin: 0 auto;
+            .card-thumbs {
+                max-width: 100%;
+                justify-content: flex-start;
             }
         }
     </style>
@@ -280,7 +350,9 @@
                 <p>Generate stunning, high-resolution visual artwork using advanced text-to-image prompts. Tailor unique artistic styles, select precise aspect ratios, and bring your imagination to life instantly with powerful AI models.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/image-generation.jpg" alt="AI Image Generation">
+            <div class="card-thumbs">
+                <img src="../images/image-generation.jpg" alt="AI Image Generation" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
         <!-- Feature 2: Image Editor & DP -->
@@ -291,7 +363,9 @@
                 <p>An intuitive editing interface designed for cropping, filtering, enhancing, and optimizing pictures precisely tailored for profile displays, avatars, and social media sharing.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/image-editor-dp.jpg" alt="Image Editor">
+            <div class="card-thumbs">
+                <img src="../images/image-editor-dp.jpg" alt="Image Editor & DP" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
         <!-- Feature 3: Video AI (4-6 seconds) -->
@@ -302,7 +376,9 @@
                 <p>An advanced cutting-edge module supporting both <strong>Text-to-Video</strong> and <strong>Image-to-Video</strong> generation. Create dynamic, cinematic short-form AI motion videos lasting between <strong>4 to 6 seconds</strong> seamlessly.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/video-ai.jpg" alt="Video AI">
+            <div class="card-thumbs">
+                <img src="../images/video-ai.jpg" alt="Video AI Studio" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
         <!-- Feature 4: Voice AI & Model Training (TTS only) -->
@@ -313,7 +389,9 @@
                 <p>A specialized audio studio focused on high-fidelity <strong>Text-to-Speech (TTS)</strong> synthesis alongside dedicated <strong>Model Training</strong> options to configure custom voice personas and speech parameters efficiently.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/voice-ai.jpg" alt="Voice AI">
+            <div class="card-thumbs">
+                <img src="../images/voice-ai.jpg" alt="Voice AI Module" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
         <!-- Feature 5: Train Model Screen -->
@@ -324,7 +402,9 @@
                 <p>Train your own custom models directly inside the app workspace. Configure training parameters, upload base datasets, and manage your trained assets effortlessly with built-in status monitoring.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/trainmodel.jpg" alt="Train Model">
+            <div class="card-thumbs">
+                <img src="../images/trainmodel.jpg" alt="Train Model" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
         <!-- Feature 6: Audio Tools & Recording -->
@@ -335,9 +415,20 @@
                 <p>Built-in handy utilities supporting seamless microphone voice recording, audio file management, track playback, and history logs designed for quick voice generation workflows.</p>
                 <a href="wallet.html" class="btn-action">More Information</a>
             </div>
-            <img src="../images/audio-tools.jpg" alt="Audio Tools">
+            <div class="card-thumbs">
+                <img src="../images/audio-tools.jpg" alt="Audio Tools" onclick="openLightboxFromThumb(this)">
+            </div>
         </div>
 
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
     </div>
 
     <footer>
@@ -352,6 +443,30 @@
         </div>
         <p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
     </footer>
+
+    <script>
+    function openLightboxFromThumb(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox-caption').textContent = img.alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    </script>
 
 </body>
 </html>
