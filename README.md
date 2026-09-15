@@ -127,6 +127,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
     <img src="images/video-ai.jpg" alt="Video AI Studio" onclick="openLightboxFromThumb(this)">
     <img src="images/voice-ai.jpg" alt="Voice AI Module" onclick="openLightboxFromThumb(this)">
     <img src="images/image-editor-dp.jpg" alt="Image Editor" onclick="openLightboxFromThumb(this)">
+    <img src="images/trainmodel.jpg" alt="Train Model" onclick="openLightboxFromThumb(this)">
   </div>
 </div>
 
@@ -140,6 +141,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   <div class="card-thumbs">
     <img src="images/wallet-rewards-menu.jpg" alt="Wallet & Rewards" onclick="openLightboxFromThumb(this)">
     <img src="images/watch-ad-reward.jpg" alt="Ad Reward" onclick="openLightboxFromThumb(this)">
+    <img src="images/collectdailyrewards.jpg" alt="Collect Daily Rewards" onclick="openLightboxFromThumb(this)">
     <img src="images/store.jpg" alt="Credit Store" onclick="openLightboxFromThumb(this)">
     <img src="images/invite.jpg" alt="Referral Invite" onclick="openLightboxFromThumb(this)">
   </div>
@@ -215,14 +217,16 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 <div class="card" data-category="ai" onclick="openLightbox(this)"><img src="images/image-editor-dp.jpg" alt="Image Editor & DP"><div class="card-content"><h3>Image Editor & DP</h3></div></div>
 <div class="card" data-category="ai" onclick="openLightbox(this)"><img src="images/video-ai.jpg" alt="Video AI Studio"><div class="card-content"><h3>Video AI Studio</h3></div></div>
 <div class="card" data-category="ai" onclick="openLightbox(this)"><img src="images/voice-ai.jpg" alt="Voice AI Module"><div class="card-content"><h3>Voice AI Module</h3></div></div>
+<div class="card" data-category="ai" onclick="openLightbox(this)"><img src="images/trainmodel.jpg" alt="Train Model"><div class="card-content"><h3>Train Model</h3></div></div>
 <div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/wallet-rewards-menu.jpg" alt="Wallet & Rewards"><div class="card-content"><h3>Wallet & Rewards</h3></div></div>
 <div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/watch-ad-reward.jpg" alt="Ad Reward System"><div class="card-content"><h3>Ad Reward System</h3></div></div>
+<div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/collectdailyrewards.jpg" alt="Collect Daily Rewards"><div class="card-content"><h3>Daily Rewards</h3></div></div>
 <div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/store.jpg" alt="Credit Store"><div class="card-content"><h3>Credit Store 1</h3></div></div>
-<div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/store 1.jpg" alt="Credit Store 2"><div class="card-content"><h3>Credit Store 2</h3></div></div>
+<div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/store_1.jpg" alt="Credit Store 2"><div class="card-content"><h3>Credit Store 2</h3></div></div>
 <div class="card" data-category="wallet" onclick="openLightbox(this)"><img src="images/invite.jpg" alt="Referral Invite"><div class="card-content"><h3>Referral Invite</h3></div></div>
 <div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/audio-tools.jpg" alt="Audio Tools"><div class="card-content"><h3>Audio Tools</h3></div></div>
 <div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/voice-library.jpg" alt="Voice Library"><div class="card-content"><h3>Voice Library</h3></div></div>
-<div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/history.jpg" alt="General History"><div class="card-content"><h3>General History</h3></div></div>
+<div class="card" data-category="tools" onclick="openLightbox(this)"><img src="pages/../images/history.jpg" alt="General History"><div class="card-content"><h3>General History</h3></div></div>
 <div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/image-history.jpg" alt="Image History"><div class="card-content"><h3>Image History</h3></div></div>
 <div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/video-history.jpg" alt="Video History"><div class="card-content"><h3>Video History</h3></div></div>
 <div class="card" data-category="tools" onclick="openLightbox(this)"><img src="images/voice-history.jpg" alt="Voice History"><div class="card-content"><h3>Voice History</h3></div></div>
@@ -278,7 +282,7 @@ function openLightboxFromThumb(img) {
   document.getElementById('lightbox-img').src = img.src;
   document.getElementById('lightbox-img').alt = img.alt;
   document.getElementById('lightbox-caption').textContent = img.alt;
-  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightbox').classList.add('app-open') || document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = '';
 }
 
