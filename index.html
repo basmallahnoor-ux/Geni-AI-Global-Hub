@@ -11,7 +11,7 @@
 body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 a{text-decoration:none;color:inherit}
 
-/* ===== NAVIGATION (flat important links) ===== */
+/* ===== NAVIGATION ===== */
 nav{background:#0b0b0b;border-bottom:1px solid var(--gold);padding:12px 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
 .logo{color:var(--gold);font-size:1.35rem;font-weight:800;white-space:nowrap}
 .nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
@@ -42,14 +42,57 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 18px}
 .filter-btn{background:var(--card);color:var(--gold);border:1px solid var(--border);padding:10px 20px;border-radius:30px;cursor:pointer;font-size:.95rem;font-weight:600}
 .filter-btn:hover,.filter-btn.active{background:var(--gold);color:#000;box-shadow:0 0 12px rgba(255,215,0,.35)}
 
-/* ===== SMALL THUMBNAILS ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.5);cursor:pointer}
-.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 8px 20px rgba(255,215,0,.18)}
-.card img{width:100%;height:180px;object-fit:contain;background:#000;padding:8px;border-bottom:1px solid #222;display:block}
-.card-content{padding:14px 16px}
-.card-content h3{color:var(--light);font-size:1.05rem;margin-bottom:5px}
-.card-content p{color:var(--muted);font-size:.82rem;line-height:1.4}
+/* ===== VERY SMALL SQUARE ICONS ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
+  gap:12px;
+  justify-content:center;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  transition:.25s;
+  cursor:pointer;
+  width:100%;
+  max-width:110px;
+  margin:0 auto;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+  box-shadow:0 6px 15px rgba(255,215,0,.2);
+}
+
+.card img{
+  width:100%;
+  height:90px;
+  object-fit:cover;
+  background:#000;
+  display:block;
+}
+
+.card-content{
+  padding:6px 4px;
+  text-align:center;
+}
+
+.card-content h3{
+  color:var(--light);
+  font-size:0.72rem;
+  margin-bottom:2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.card-content p{
+  display:none;
+}
 
 /* ===== LIGHTBOX ===== */
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;justify-content:center;align-items:center;padding:20px}
@@ -66,15 +109,21 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 .whatsapp{color:#8ee58e!important}
 
 @media(max-width:900px){
-.info-grid{grid-template-columns:repeat(2,1fr)}
-.nav-links{gap:10px}
-.nav-links a{font-size:.8rem}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{gap:10px}
+  .nav-links a{font-size:.8rem}
 }
+
 @media(max-width:600px){
-.info-grid,.policy-grid{grid-template-columns:1fr}
-.grid{grid-template-columns:repeat(2,1fr);gap:12px}
-.card img{height:140px}
-.nav-links{justify-content:center}
+  .info-grid,.policy-grid{grid-template-columns:1fr}
+  .grid{
+    grid-template-columns:repeat(auto-fill, minmax(85px, 1fr));
+    gap:8px;
+  }
+  .card{max-width:95px}
+  .card img{height:75px}
+  .card-content h3{font-size:0.65rem}
+  .nav-links{justify-content:center}
 }
 </style>
 </head>
@@ -105,227 +154,4 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 <div class="container">
 
 <div class="section-title">
-<h2>Explore Geni AI</h2>
-<p>Discover the main features, wallet, account safety and support.</p>
-</div>
-
-<div class="info-grid">
-<div class="info-card">
-<h3>🤖 AI Features</h3>
-<p>Explore image, video, voice and other AI creative tools.</p>
-<a class="btn" href="pages/features.html">Explore</a>
-</div>
-<div class="info-card">
-<h3>💰 Wallet & Store</h3>
-<p>Learn about rewards, credits, purchases and referrals.</p>
-<a class="btn" href="pages/wallet.html">View Wallet</a>
-</div>
-<div class="info-card">
-<h3>🛡️ Account & Safety</h3>
-<p>Account security and important account controls.</p>
-<a class="btn" href="pages/account-safety.html">View</a>
-</div>
-<div class="info-card">
-<h3>💬 Support</h3>
-<p>Get help through the official Geni AI support channels.</p>
-<a class="btn" href="pages/support.html">Support</a>
-</div>
-</div>
-
-<div class="section-title">
-<h2>Policies & Account</h2>
-<p>Important privacy, legal and account-management information.</p>
-</div>
-
-<div class="policy-grid">
-<div class="info-card">
-<h3>Privacy Policy</h3>
-<p>Read the complete Geni AI Privacy Policy.</p>
-<a class="btn" href="pages/privacy-policy.html">Read Policy</a>
-</div>
-<div class="info-card">
-<h3>Terms of Service</h3>
-<p>Read the complete terms for using Geni AI.</p>
-<a class="btn" href="pages/terms.html">Read Terms</a>
-</div>
-<div class="info-card">
-<h3>Delete Account</h3>
-<p>Permanently delete your Geni AI account.</p>
-<a class="btn" href="pages/delete-account.html">Delete Account</a>
-</div>
-</div>
-
-<div class="section-title" id="gallery">
-<h2>Official App Gallery</h2>
-<p>Click any image to view it larger. Explore screenshots from different areas of Geni AI.</p>
-</div>
-
-<div class="filter-container">
-<button class="filter-btn active" onclick="filterGallery('all',this)">📂 All Folders</button>
-<button class="filter-btn" onclick="filterGallery('ai',this)">🤖 AI Studio</button>
-<button class="filter-btn" onclick="filterGallery('wallet',this)">💰 Wallet & Store</button>
-<button class="filter-btn" onclick="filterGallery('tools',this)">🛠️ Tools & History</button>
-<button class="filter-btn" onclick="filterGallery('profile',this)">👤 Profile & Safety</button>
-</div>
-
-<div class="grid" id="galleryGrid">
-
-<div class="card" data-category="profile" onclick="openLightbox(this)">
-<img src="images/home.jpg" alt="Main Dashboard">
-<div class="card-content"><h3>Main Dashboard</h3><p>Central screen showing AI features and live coin balances simultaneously.</p></div>
-</div>
-
-<div class="card" data-category="ai" onclick="openLightbox(this)">
-<img src="images/image-generation.jpg" alt="AI Image Generation">
-<div class="card-content"><h3>AI Image Generation</h3><p>Powerful studio module designed for generating stunning and creative images.</p></div>
-</div>
-
-<div class="card" data-category="ai" onclick="openLightbox(this)">
-<img src="images/image-editor-dp.jpg" alt="Image Editor & DP">
-<div class="card-content"><h3>Image Editor & DP</h3><p>Interface for editing, resizing, and tailoring pictures for profile displays.</p></div>
-</div>
-
-<div class="card" data-category="ai" onclick="openLightbox(this)">
-<img src="images/video-ai.jpg" alt="Video AI Studio">
-<div class="card-content"><h3>Video AI Studio</h3><p>Advanced module to generate and manage AI videos seamlessly.</p></div>
-</div>
-
-<div class="card" data-category="ai" onclick="openLightbox(this)">
-<img src="images/voice-ai.jpg" alt="Voice AI Module">
-<div class="card-content"><h3>Voice AI Module</h3><p>Interface for voice cloning, synthesis, and audio processing.</p></div>
-</div>
-
-<div class="card" data-category="wallet" onclick="openLightbox(this)">
-<img src="images/wallet-rewards-menu.jpg" alt="Wallet & Rewards">
-<div class="card-content"><h3>Wallet & Rewards Menu</h3><p>Hub managing coin balance, daily rewards, and referrals.</p></div>
-</div>
-
-<div class="card" data-category="wallet" onclick="openLightbox(this)">
-<img src="images/watch-ad-reward.jpg" alt="Ad Reward System">
-<div class="card-content"><h3>Ad Reward System</h3><p>Earn free currency by watching rewarded video advertisements.</p></div>
-</div>
-
-<div class="card" data-category="wallet" onclick="openLightbox(this)">
-<img src="images/store.jpg" alt="Credit Store">
-<div class="card-content"><h3>Credit Store (Package 1)</h3><p>Store interface for available credit packages.</p></div>
-</div>
-
-<div class="card" data-category="wallet" onclick="openLightbox(this)">
-<img src="images/store 1.jpg" alt="Credit Store 2">
-<div class="card-content"><h3>Credit Store (Package 2)</h3><p>Detailed listing of additional credit offers and bundles.</p></div>
-</div>
-
-<div class="card" data-category="wallet" onclick="openLightbox(this)">
-<img src="images/invite.jpg" alt="Referral Invite">
-<div class="card-content"><h3>Referral Invite System</h3><p>Invite friends through QR code sharing and referral rewards.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/audio-tools.jpg" alt="Audio Tools">
-<div class="card-content"><h3>Audio Tools</h3><p>Utilities supporting microphone recording and audio playback.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/voice-library.jpg" alt="Voice Library">
-<div class="card-content"><h3>Voice Library</h3><p>Repository for saved voice clips, audio samples, and outputs.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/history.jpg" alt="General History">
-<div class="card-content"><h3>General History</h3><p>Activity log tracking previous user sessions and events.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/image-history.jpg" alt="Image History">
-<div class="card-content"><h3>Image History</h3><p>Gallery archiving previously generated images and artwork.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/video-history.jpg" alt="Video History">
-<div class="card-content"><h3>Video History</h3><p>Record log of previously created AI videos.</p></div>
-</div>
-
-<div class="card" data-category="tools" onclick="openLightbox(this)">
-<img src="images/voice-history.jpg" alt="Voice History">
-<div class="card-content"><h3>Voice History</h3><p>Logs of previous voice generations and tasks.</p></div>
-</div>
-
-<div class="card" data-category="profile" onclick="openLightbox(this)">
-<img src="images/profile.jpg" alt="User Profile">
-<div class="card-content"><h3>User Profile</h3><p>Account settings and personal preference controls.</p></div>
-</div>
-
-<div class="card" data-category="profile" onclick="openLightbox(this)">
-<img src="images/account-safety.jpg" alt="Account Safety">
-<div class="card-content"><h3>Account Safety</h3><p>Security guidelines and account protection information.</p></div>
-</div>
-
-<div class="card" data-category="profile" onclick="openLightbox(this)">
-<img src="images/ai-error.jpg" alt="System Alert">
-<div class="card-content"><h3>System Alert / Notice</h3><p>Guidance for network connection or server errors.</p></div>
-</div>
-
-</div>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
-    <img id="lightbox-img" src="" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-  </div>
-</div>
-
-<footer>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="pages/features.html">Features</a>
-<a href="pages/wallet.html">Wallet</a>
-<a href="pages/account-safety.html">Account & Safety</a>
-<a href="pages/privacy-policy.html">Privacy</a>
-<a href="pages/terms.html">Terms</a>
-<a href="pages/delete-account.html">Delete Account</a>
-<a href="pages/support.html">Support</a>
-<a class="whatsapp" href="https://whatsapp.com/channel/0029Vb8SKApE50UoFQ3PCT0d" target="_blank" rel="noopener">WhatsApp Channel</a>
-</div>
-<p>&copy; 2026 Geni AI Global Hub. All rights reserved.</p>
-</footer>
-
-<script>
-function filterGallery(category, button) {
-  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  document.querySelectorAll('.card').forEach(card => {
-    card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
-  });
-}
-
-function openLightbox(card) {
-  const img = card.querySelector('img');
-  const title = card.querySelector('h3')?.textContent || '';
-  document.getElementById('lightbox-img').src = img.src;
-  document.getElementById('lightbox-img').alt = img.alt;
-  document.getElementById('lightbox-caption').textContent = title;
-  document.getElementById('lightbox').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox(e) {
-  if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-}
-
-// Close with Escape key
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-});
-</script>
-
-</body>
-</html>
+<
