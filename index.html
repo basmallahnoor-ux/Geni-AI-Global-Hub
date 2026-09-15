@@ -11,7 +11,7 @@
 body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 a{text-decoration:none;color:inherit}
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION (flat important links) ===== */
 nav{background:#0b0b0b;border-bottom:1px solid var(--gold);padding:12px 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
 .logo{color:var(--gold);font-size:1.35rem;font-weight:800;white-space:nowrap}
 .nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
@@ -42,14 +42,13 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 18px}
 .filter-btn{background:var(--card);color:var(--gold);border:1px solid var(--border);padding:10px 20px;border-radius:30px;cursor:pointer;font-size:.95rem;font-weight:600}
 .filter-btn:hover,.filter-btn.active{background:var(--gold);color:#000;box-shadow:0 0 12px rgba(255,215,0,.35)}
 
-/* ===== VERY SMALL SQUARE ICONS ===== */
+/* ===== ONLY GALLERY MADE SMALL (ICON SIZE) ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));
   gap:12px;
   justify-content:center;
 }
-
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -57,17 +56,14 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 18px}
   overflow:hidden;
   transition:.25s;
   cursor:pointer;
-  width:100%;
   max-width:110px;
   margin:0 auto;
 }
-
 .card:hover{
   transform:translateY(-4px);
   border-color:var(--gold);
   box-shadow:0 6px 15px rgba(255,215,0,.2);
 }
-
 .card img{
   width:100%;
   height:90px;
@@ -75,23 +71,20 @@ header p{color:var(--muted);font-size:1.1rem;margin:8px 0 18px}
   background:#000;
   display:block;
 }
-
 .card-content{
   padding:6px 4px;
   text-align:center;
 }
-
 .card-content h3{
   color:var(--light);
   font-size:0.72rem;
-  margin-bottom:2px;
+  margin:0;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
-
 .card-content p{
-  display:none;
+  display:none; /* تفصیل چھپا دی تاکہ صرف چھوٹا آئیکن رہے */
 }
 
 /* ===== LIGHTBOX ===== */
@@ -113,13 +106,9 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
   .nav-links{gap:10px}
   .nav-links a{font-size:.8rem}
 }
-
 @media(max-width:600px){
   .info-grid,.policy-grid{grid-template-columns:1fr}
-  .grid{
-    grid-template-columns:repeat(auto-fill, minmax(85px, 1fr));
-    gap:8px;
-  }
+  .grid{grid-template-columns:repeat(auto-fill, minmax(85px, 1fr));gap:8px}
   .card{max-width:95px}
   .card img{height:75px}
   .card-content h3{font-size:0.65rem}
@@ -206,7 +195,7 @@ footer{text-align:center;padding:28px;background:#040404;color:var(--muted);bord
 
 <div class="section-title" id="gallery">
 <h2>Official App Gallery</h2>
-<p>Small previews below. Click any icon to view the full screenshot.</p>
+<p>Small icons below. Click any icon to view the full screenshot.</p>
 </div>
 
 <div class="filter-container">
